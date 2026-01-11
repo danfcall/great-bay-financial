@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
               loadingSpinner="false"
               videoFoam="false"
               quality="1080p"
-              className="w-full h-full object-cover opacity-60"
+              className="w-full h-full object-cover opacity-100"
             ></WistiaPlayer>
           </div>
         </div>
