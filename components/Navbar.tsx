@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
           <img
-            src="/gb-logo-1.png"
+            src={`${import.meta.env.BASE_URL}gb-logo-1.png`}
             alt="Great Bay Financial"
             className="h-12 w-auto object-contain transition-opacity duration-300 group-hover:opacity-80"
           />
