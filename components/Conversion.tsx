@@ -45,7 +45,7 @@ const Conversion: React.FC = () => {
 
         <form className="w-full max-w-lg mx-auto space-y-4 text-left" onSubmit={(e) => e.preventDefault()}>
           <div>
-            <label className="block text-xs uppercase tracking-widest text-cream/60 mb-2">Name</label>
+            <label className="block text-sm uppercase tracking-widest text-cream/60 mb-2">Name</label>
             <input
               type="text"
               className="w-full bg-surface/50 border-b border-cream/20 px-4 py-3 text-cream focus:outline-none focus:border-accent transition-colors placeholder-cream/20 backdrop-blur-sm"
@@ -53,7 +53,7 @@ const Conversion: React.FC = () => {
             />
           </div>
           <div>
-            <label className="block text-xs uppercase tracking-widest text-cream/60 mb-2">Company</label>
+            <label className="block text-sm uppercase tracking-widest text-cream/60 mb-2">Company</label>
             <input
               type="text"
               className="w-full bg-surface/50 border-b border-cream/20 px-4 py-3 text-cream focus:outline-none focus:border-accent transition-colors placeholder-cream/20 backdrop-blur-sm"
@@ -61,7 +61,7 @@ const Conversion: React.FC = () => {
             />
           </div>
           <div>
-            <label className="block text-xs uppercase tracking-widest text-cream/60 mb-2">Email</label>
+            <label className="block text-sm uppercase tracking-widest text-cream/60 mb-2">Email</label>
             <input
               type="email"
               className="w-full bg-surface/50 border-b border-cream/20 px-4 py-3 text-cream focus:outline-none focus:border-accent transition-colors placeholder-cream/20 backdrop-blur-sm"
