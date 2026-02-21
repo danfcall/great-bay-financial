@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { SERVICES } from '../constants';
 import { ArrowRight } from 'lucide-react';
 
 const Services: React.FC = () => {
-  const [activeService, setActiveService] = useState<string | null>(null);
-
   return (
     <section id="services" className="py-24 md:py-32 px-6 md:px-12 bg-background relative z-10">
       <div className="max-w-7xl mx-auto">
@@ -15,32 +13,27 @@ const Services: React.FC = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-l border-cream/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-l border-cream/10">
           {SERVICES.map((service) => (
             <div
               key={service.id}
-              className="group relative border-b border-r border-cream/10 p-8 md:p-12 min-h-[400px] flex flex-col justify-between hover:bg-surface transition-all duration-500"
-              onMouseEnter={() => setActiveService(service.id)}
-              onMouseLeave={() => setActiveService(null)}
+              className="group relative border-b border-r border-cream/10 p-8 md:p-10 flex flex-col justify-between hover:bg-surface transition-all duration-500"
             >
               <div className="relative z-10">
-                <span className="text-5xl font-display font-bold text-cream/5 group-hover:text-accent/20 transition-colors duration-500 mb-8 block">
-                  {service.id}
-                </span>
-                <service.icon className="w-10 h-10 text-cream/80 mb-6 group-hover:text-accent transition-colors duration-300" />
-                <h3 className="text-2xl font-bold mb-4 text-cream">{service.title}</h3>
-                <p className="text-cream/60 group-hover:text-cream transition-colors duration-300">
-                  {service.description}
-                </p>
+                {/* Icon replaces number, using the same faint color as the old number */}
+                <service.icon className="w-10 h-10 text-cream/10 group-hover:text-accent/40 transition-colors duration-500 mb-6" />
+                <h3 className="text-2xl font-bold mb-3 text-cream">{service.title}</h3>
+                <p className="text-sm text-cream/40">{service.detail}</p>
               </div>
 
-              <div className="relative z-10 mt-8 overflow-hidden">
-                <div className={`transform transition-all duration-500 ease-out ${activeService === service.id ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-                  <p className="text-sm text-cream/50 mb-4">{service.detail}</p>
-                  <a href="#contact" className="inline-flex items-center text-accent hover:underline decoration-1 underline-offset-4 uppercase text-xs font-bold tracking-widest">
-                    Learn More <ArrowRight className="w-3 h-3 ml-2" />
-                  </a>
-                </div>
+              {/* "Learn More" only appears on hover */}
+              <div className="relative z-10 mt-6 overflow-hidden h-5">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center text-accent uppercase text-xs font-bold tracking-widest transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 ease-out"
+                >
+                  Learn More <ArrowRight className="w-3 h-3 ml-2" />
+                </a>
               </div>
 
               {/* Hover Glow Effect */}

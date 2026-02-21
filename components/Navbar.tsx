@@ -30,13 +30,17 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
-          {['Expertise', 'Services', 'Case Studies'].map((item) => (
+          {[
+            { label: 'About us', href: '#narrative' },
+            { label: 'Services', href: '#services' },
+            { label: 'Case Studies', href: '#case studies' }
+          ].map((item) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
+              key={item.label}
+              href={item.href}
               className="text-sm font-medium text-cream/70 hover:text-accent transition-colors uppercase tracking-wider"
             >
-              {item}
+              {item.label}
             </a>
           ))}
         </div>
@@ -64,14 +68,19 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
       {mobileOpen && (
         <div className="absolute top-full left-0 right-0 bg-background border-b border-cream/10 p-6 md:hidden flex flex-col gap-6">
-          {['Expertise', 'Services', 'Case Studies', 'Contact'].map((item) => (
+          {[
+            { label: 'About us', href: '#narrative' },
+            { label: 'Services', href: '#services' },
+            { label: 'Case Studies', href: '#case studies' },
+            { label: 'Contact', href: '#contact' }
+          ].map((item) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
+              key={item.label}
+              href={item.href}
               className="text-2xl font-display font-bold text-cream hover:text-accent"
               onClick={() => setMobileOpen(false)}
             >
-              {item}
+              {item.label}
             </a>
           ))}
         </div>

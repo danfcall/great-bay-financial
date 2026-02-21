@@ -4,7 +4,7 @@ import { Quote } from 'lucide-react';
 
 const Stats: React.FC = () => {
   return (
-    <section className="py-24 bg-surface px-6 md:px-12 border-y border-background/10">
+    <section className="py-24 bg-background px-6 md:px-12 border-y border-cream/5">
       <div className="max-w-7xl mx-auto">
 
         {/* Numbers Grid */}

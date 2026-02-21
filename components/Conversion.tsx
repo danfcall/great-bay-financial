@@ -35,6 +35,9 @@ const Conversion: React.FC = () => {
       {/* Overlays for readability */}
       <div className="absolute inset-0 bg-background/85 z-[2] pointer-events-none"></div>
 
+      {/* Top gradient fade from stats section */}
+      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-background to-transparent z-[3] pointer-events-none"></div>
+
       <div className="max-w-4xl mx-auto relative z-10 text-center">
         <h2 className="font-display text-5xl md:text-7xl font-bold mb-8 text-cream">
           Ready to <span className="text-accent italic">Grow?</span>

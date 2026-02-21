@@ -1,4 +1,4 @@
-import { LucideIcon, TrendingUp, ShieldCheck, Zap, Globe, PieChart, Users, Layers, Factory, Coins } from 'lucide-react';
+import { LucideIcon, TrendingUp, ShieldCheck, Zap, Globe, PieChart, Users, Layers, Factory, Coins, Mail } from 'lucide-react';
 
 export interface Service {
   id: string;
@@ -14,21 +14,28 @@ export const SERVICES: Service[] = [
     title: 'Capital Advisory',
     description: 'Strategic guidance on capital projects.',
     icon: PieChart,
-    detail: 'Steering clients through projects ranging from acquisitions to location buildouts that require strategic guidance and complex financing.'
+    detail: 'Assisting clients with projects – acquisitions and location buildouts – requiring strategic guidance, FP&A, and complex financing.'
   },
   {
     id: '02',
-    title: 'Loan Brokerage',
+    title: 'Loan Origination',
     description: 'Access to the right capital partners.',
     icon: TrendingUp,
-    detail: 'Matching clients’ financing needs with banks and private lenders to find the best suitability and lowest interest rates.'
+    detail: 'Matching clients\' financing needs with banks and private lenders to find the best suitability and lowest interest rates.'
   },
   {
     id: '03',
     title: 'Vendor Finance',
-    description: 'Expertly managed vendor finance portfolios.',
+    description: 'Expertly managed vendor-finance portfolios.',
     icon: Users,
     detail: 'Partnering with equipment dealers and manufacturers to manage their vendor-finance portfolios.'
+  },
+  {
+    id: '04',
+    title: 'Affiliate Marketing',
+    description: 'Unlocking new business.',
+    icon: Mail,
+    detail: 'Providing email marketing to generate new leads and financing promotions.'
   }
 ];
 
