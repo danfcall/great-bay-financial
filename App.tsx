@@ -9,9 +9,12 @@ import Footer from './components/Footer';
 
 const App: React.FC = () => {
   return (
-    <div className="relative w-full min-h-screen bg-background text-cream font-sans selection:bg-accent selection:text-background">
+    <div className="page-shell w-full min-h-screen bg-background text-cream font-sans selection:bg-accent selection:text-background">
+      <div className="hero-orbit" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[42rem] bg-[radial-gradient(circle_at_top,rgba(215,189,132,0.16),transparent_52%)]" />
+      <div className="pointer-events-none absolute inset-x-0 top-[24rem] z-0 h-[36rem] bg-[linear-gradient(180deg,transparent,rgba(255,255,255,0.02),transparent)]" />
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <Narrative />
         <Services />
@@ -19,11 +22,6 @@ const App: React.FC = () => {
         <Conversion />
       </main>
       <Footer />
-      
-      {/* Background Noise/Texture - Subtle Grain */}
-      <div className="fixed inset-0 pointer-events-none opacity-[0.04] z-[9999] mix-blend-overlay" 
-           style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}>
-      </div>
     </div>
   );
 };

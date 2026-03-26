@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { ArrowRight, Menu, X } from 'lucide-react';
+import { NAV_LINKS } from '../constants';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -7,82 +8,100 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileOpen]);
+
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${scrolled ? 'py-4 bg-background/90 backdrop-blur-md border-transparent' : 'py-8 bg-transparent border-white/30'
-        }`}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled ? 'border-b border-cream/10 bg-background/88 backdrop-blur-xl' : 'bg-transparent'
+      }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
-          <img
-            src={`${import.meta.env.BASE_URL}gb-logo.png`}
-            alt="Great Bay Financial"
-            className="h-14 w-auto object-contain transition-opacity duration-300 group-hover:opacity-80"
-          />
-        </a>
-
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
-          {[
-            { label: 'About us', href: '#narrative' },
-            { label: 'Services', href: '#services' },
-            { label: 'Case Studies', href: '#case studies' }
-          ].map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="text-sm font-medium text-cream/70 hover:text-accent transition-colors uppercase tracking-wider"
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
-
-        {/* CTA */}
-        <div className="hidden md:flex">
-          <a
-            href="#contact"
-            className="flex items-center gap-2 px-6 py-2 border border-cream/20 hover:border-accent hover:text-accent transition-colors duration-300 rounded-full text-sm uppercase tracking-wide group text-cream"
-          >
-            Get Funded
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+      <div className="section-frame px-6 md:px-10">
+        <div className="flex items-center justify-between py-5">
+          <a href="#" className="flex items-center gap-4">
+            <img
+              src={`${import.meta.env.BASE_URL}gb-logo-1.png`}
+              alt="Great Bay Financial"
+              className="h-9 w-auto object-contain md:h-11"
+            />
+            <div className="hidden lg:block border-l border-cream/15 pl-4">
+              <p className="grid-label text-[10px] text-accentSoft/80">Independent capital advisory</p>
+              <p className="text-sm text-cream/70">Asset-backed lending and strategic finance</p>
+            </div>
           </a>
-        </div>
 
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-cream"
-          onClick={() => setMobileOpen(!mobileOpen)}
-        >
-          {mobileOpen ? <X /> : <Menu />}
-        </button>
+          <div className="hidden items-center gap-8 xl:flex">
+            {NAV_LINKS.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="grid-label text-[11px] text-cream/70 transition-colors duration-200 hover:text-accentSoft"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+
+          <div className="hidden md:flex">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-3 rounded-full border border-accent/35 bg-accent/10 px-5 py-3 text-sm font-medium text-cream transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/70 hover:bg-accent/16"
+            >
+              Request a consultation
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+
+          <button
+            type="button"
+            aria-label={mobileOpen ? 'Close navigation' : 'Open navigation'}
+            className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-cream/15 bg-canvas/80 text-cream md:hidden"
+            onClick={() => setMobileOpen((value) => !value)}
+          >
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="absolute top-full left-0 right-0 bg-background border-b border-cream/10 p-6 md:hidden flex flex-col gap-6">
-          {[
-            { label: 'About us', href: '#narrative' },
-            { label: 'Services', href: '#services' },
-            { label: 'Case Studies', href: '#case studies' },
-            { label: 'Contact', href: '#contact' }
-          ].map((item) => (
+        <div className="border-t border-cream/10 bg-background/96 px-6 pb-8 pt-6 backdrop-blur-xl md:hidden">
+          <div className="section-frame space-y-6">
+            <p className="grid-label text-[11px] text-accentSoft/75">Navigate</p>
+            <div className="space-y-4">
+              {NAV_LINKS.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="block font-display text-3xl leading-none text-cream"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
             <a
-              key={item.label}
-              href={item.href}
-              className="text-2xl font-display font-bold text-cream hover:text-accent"
+              href="#contact"
+              className="inline-flex items-center gap-3 rounded-full border border-accent/35 bg-accent px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-background"
               onClick={() => setMobileOpen(false)}
             >
-              {item.label}
+              Start the conversation
+              <ArrowRight className="h-4 w-4" />
             </a>
-          ))}
+          </div>
         </div>
       )}
     </nav>

@@ -1,88 +1,102 @@
 import React from 'react';
-import { ArrowRight, Lock } from 'lucide-react';
+import { ArrowRight, LockKeyhole, ShieldCheck } from 'lucide-react';
 
 const Conversion: React.FC = () => {
-  const WistiaPlayer = 'wistia-player' as any;
-
   return (
-    <section id="contact" className="py-24 md:py-32 px-6 md:px-12 relative overflow-hidden bg-background">
+    <section id="contact" className="px-6 py-20 md:px-10 md:py-28">
+      <div className="section-frame">
+        <div className="panel rounded-[2.25rem] p-8 md:p-10 xl:p-12">
+          <div className="grid gap-12 xl:grid-cols-[0.9fr_1.1fr]">
+            <div className="max-w-xl">
+              <div className="eyebrow">Start the conversation</div>
+              <h2 className="mt-7 font-display text-[clamp(2.8rem,5vw,5rem)] leading-[0.92] tracking-[-0.04em] text-white">
+                Bring us the mandate. We will help shape the path to capital.
+              </h2>
+              <p className="mt-7 text-lg leading-8 text-mist">
+                Share the opportunity, timing, and financing question you are working through. We will respond with the right next step for the situation.
+              </p>
 
-      {/* Background Video */}
-      <div className="absolute inset-0 w-full h-full z-[1] overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 w-full h-full">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-[177.78vh] h-[56.25vw]">
-            <WistiaPlayer
-              media-id="i952bbp1q2"
-              aspect="1.7777777777777777"
-              autoplay="muted"
-              muted="true"
-              loop="true"
-              playsinline="true"
-              controlsVisibleOnLoad="false"
-              playButton="false"
-              playbar="false"
-              volumeControl="false"
-              fullscreenButton="false"
-              smallPlayButton="false"
-              loadingSpinner="false"
-              videoFoam="false"
-              className="w-full h-full object-cover"
-            ></WistiaPlayer>
+              <div className="mt-10 grid gap-4">
+                {[
+                  'Confidential review of the opportunity and capital need',
+                  'Senior-level perspective on lender fit and process design',
+                  'Clear next steps instead of a generic intake sequence',
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3 rounded-[1.3rem] border border-cream/10 bg-white/[0.03] px-4 py-4">
+                    <ShieldCheck className="mt-0.5 h-5 w-5 flex-none text-accent" />
+                    <p className="text-sm leading-7 text-cream/82">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <form className="grid gap-5" onSubmit={(event) => event.preventDefault()}>
+              <div className="grid gap-5 md:grid-cols-2">
+                <div>
+                  <label htmlFor="name" className="field-label">Name</label>
+                  <input id="name" type="text" className="field-input rounded-2xl" placeholder="Full name" />
+                </div>
+                <div>
+                  <label htmlFor="company" className="field-label">Company</label>
+                  <input id="company" type="text" className="field-input rounded-2xl" placeholder="Company name" />
+                </div>
+              </div>
+
+              <div className="grid gap-5 md:grid-cols-2">
+                <div>
+                  <label htmlFor="email" className="field-label">Email</label>
+                  <input id="email" type="email" className="field-input rounded-2xl" placeholder="name@company.com" />
+                </div>
+                <div>
+                  <label htmlFor="timeline" className="field-label">Timeline</label>
+                  <select id="timeline" className="field-select rounded-2xl" defaultValue="">
+                    <option value="" disabled>
+                      Select timing
+                    </option>
+                    <option>Immediate opportunity</option>
+                    <option>Within 30 days</option>
+                    <option>Quarter planning horizon</option>
+                    <option>Exploratory</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="need" className="field-label">Financing need</label>
+                <input
+                  id="need"
+                  type="text"
+                  className="field-input rounded-2xl"
+                  placeholder="Acquisition, equipment refresh, fleet, working capital support, or other"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="details" className="field-label">Project overview</label>
+                <textarea
+                  id="details"
+                  className="field-textarea rounded-[1.5rem]"
+                  placeholder="Share the asset, use of proceeds, required timing, and anything lenders should understand about the business."
+                />
+              </div>
+
+              <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
+                <button
+                  type="submit"
+                  className="inline-flex items-center justify-center gap-3 rounded-full bg-accent px-7 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-background transition-all duration-200 hover:-translate-y-0.5 hover:bg-accentSoft"
+                >
+                  Request review
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+
+                <div className="inline-flex items-center gap-3 text-sm text-mist">
+                  <LockKeyhole className="h-4 w-4 text-accent" />
+                  Information is handled discreetly and reviewed directly.
+                </div>
+              </div>
+            </form>
           </div>
         </div>
-      </div>
-
-      {/* Overlays for readability */}
-      <div className="absolute inset-0 bg-background/85 z-[2] pointer-events-none"></div>
-
-      {/* Top gradient fade from stats section */}
-      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-background to-transparent z-[3] pointer-events-none"></div>
-
-      <div className="max-w-4xl mx-auto relative z-10 text-center">
-        <h2 className="font-display text-5xl md:text-7xl font-bold mb-8 text-cream">
-          Ready to <span className="text-accent italic">Grow?</span>
-        </h2>
-        <p className="text-xl text-cream/70 mb-12 max-w-2xl mx-auto">
-          <span className="block mt-2">Fill out the brief form below and a senior advisor will be in touch.</span>
-        </p>
-
-        <form className="w-full max-w-lg mx-auto space-y-4 text-left" onSubmit={(e) => e.preventDefault()}>
-          <div>
-            <label className="block text-sm uppercase tracking-widest text-cream/60 mb-2">Name</label>
-            <input
-              type="text"
-              className="w-full bg-surface/50 border-b border-cream/20 px-4 py-3 text-cream focus:outline-none focus:border-accent transition-colors placeholder-cream/20 backdrop-blur-sm"
-              placeholder="Enter your full name"
-            />
-          </div>
-          <div>
-            <label className="block text-sm uppercase tracking-widest text-cream/60 mb-2">Company</label>
-            <input
-              type="text"
-              className="w-full bg-surface/50 border-b border-cream/20 px-4 py-3 text-cream focus:outline-none focus:border-accent transition-colors placeholder-cream/20 backdrop-blur-sm"
-              placeholder="Company name"
-            />
-          </div>
-          <div>
-            <label className="block text-sm uppercase tracking-widest text-cream/60 mb-2">Email</label>
-            <input
-              type="email"
-              className="w-full bg-surface/50 border-b border-cream/20 px-4 py-3 text-cream focus:outline-none focus:border-accent transition-colors placeholder-cream/20 backdrop-blur-sm"
-              placeholder="email@company.com"
-            />
-          </div>
-
-          <div className="pt-8">
-            <button className="w-full bg-accent text-background font-bold uppercase tracking-widest py-5 flex items-center justify-center gap-2 hover:bg-cream transition-colors duration-300">
-              Start Conversation <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
-
-          <div className="flex items-center justify-center gap-2 text-xs text-cream/40 pt-4">
-            <Lock className="w-3 h-3" />
-            <span>Your data is encrypted and secure.</span>
-          </div>
-        </form>
       </div>
     </section>
   );

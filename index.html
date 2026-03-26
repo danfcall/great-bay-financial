@@ -5,16 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Great Bay Financial | Connecting Vision with Capital</title>
+  <meta
+    name="description"
+    content="Great Bay Financial structures capital solutions for equipment-intensive businesses, acquisitions, and growth initiatives."
+  />
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Wistia Player Scripts -->
-  <script src="https://fast.wistia.com/player.js" async></script>
-  <script src="https://fast.wistia.com/embed/l5jef1dyo0.js" async type="module"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Syne:wght@400;500;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
   <script>
@@ -22,46 +22,43 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Manrope', 'sans-serif'],
-            display: ['Syne', 'sans-serif'],
+            sans: ['IBM Plex Sans', 'sans-serif'],
+            display: ['Cormorant Garamond', 'serif'],
+            mono: ['IBM Plex Mono', 'monospace'],
           },
           colors: {
-            background: '#0A1628', // Dark Navy
-            surface: '#1A3D5D',     // Lighter Slate Blue
-            accent: '#E8DEC9',      // Custom Gold/Beige
-            cream: '#E8DDC8',       // Off-White/Parchment
-            white: '#F1EBDD',
-            muted: '#94a3b8',       // Blue-grey text
+            background: '#07111F',
+            canvas: '#0C1828',
+            surface: '#102742',
+            surfaceStrong: '#153452',
+            accent: '#D7BD84',
+            accentSoft: '#F1E6CE',
+            cream: '#F6EFE3',
+            white: '#FFFAF2',
+            mist: '#9FB2CB',
           },
           animation: {
-            'spin-slow': 'spin 12s linear infinite',
-            'marquee': 'marquee 25s linear infinite',
-            'float': 'float 6s ease-in-out infinite',
+            'float-slow': 'float 10s ease-in-out infinite',
+            'fade-up': 'fadeUp 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards',
+            'line-run': 'lineRun 7s linear infinite',
+            'glow-pulse': 'glowPulse 5s ease-in-out infinite',
           },
           keyframes: {
-            marquee: {
-              '0%': { transform: 'translateX(0%)' },
-              '100%': { transform: 'translateX(-100%)' },
-            },
             float: {
               '0%, 100%': { transform: 'translateY(0)' },
-              '50%': { transform: 'translateY(-20px)' },
+              '50%': { transform: 'translateY(-10px)' },
             },
-            fadeIn: {
-              '0%': { opacity: '0' },
-              '100%': { opacity: '1' },
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(28px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
             },
-            fadeInUp: {
-              '0%': { opacity: '0', transform: 'translateY(20px)', filter: 'blur(12px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)', filter: 'blur(0px)' },
+            glowPulse: {
+              '0%, 100%': { opacity: '0.35' },
+              '50%': { opacity: '0.7' },
             },
-            width: {
-              '0%': { width: '0' },
-              '100%': { width: '100%' },
-            },
-            scrollDownLine: {
-              '0%': { transform: 'translateY(-100%)' },
-              '100%': { transform: 'translateY(100%)' },
+            lineRun: {
+              '0%': { transform: 'translateY(-110%)' },
+              '100%': { transform: 'translateY(110%)' },
             }
           }
         }
@@ -70,12 +67,10 @@
   </script>
   <style>
     body {
-      background-color: #0A1628;
-      color: #E8DDC8;
+      background-color: #07111F;
+      color: #F6EFE3;
       overflow-x: hidden;
     }
-
-    /* Smooth Scrolling handled by JS below */
 
     /* Custom Scrollbar */
     ::-webkit-scrollbar {
@@ -83,42 +78,22 @@
     }
 
     ::-webkit-scrollbar-track {
-      background: #0A1628;
+      background: #07111F;
     }
 
     ::-webkit-scrollbar-thumb {
-      background: #1A3D5D;
+      background: #153452;
       border-radius: 4px;
-      border: 1px solid #0A1628;
+      border: 1px solid #07111F;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: #E8DEC9;
+      background: #D7BD84;
     }
 
-    /* Selection */
     ::selection {
-      background-color: #E8DEC9;
-      color: #0A1628;
-    }
-
-    /* Utilities */
-    .text-outline {
-      -webkit-text-stroke: 1px rgba(232, 221, 200, 0.3);
-      color: transparent;
-    }
-
-    .text-outline-accent {
-      -webkit-text-stroke: 1px #E8DEC9;
-      color: transparent;
-    }
-
-    /* Wistia Placeholder Style */
-    wistia-player[media-id='l5jef1dyo0']:not(:defined) {
-      background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/l5jef1dyo0/swatch');
-      display: block;
-      filter: blur(5px);
-      padding-top: 56.25%;
+      background-color: #D7BD84;
+      color: #07111F;
     }
   </style>
 

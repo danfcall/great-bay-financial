@@ -1,4 +1,4 @@
-import { LucideIcon, TrendingUp, ShieldCheck, Zap, Globe, PieChart, Users, Layers, Factory, Coins, Mail } from 'lucide-react';
+import { LucideIcon, TrendingUp, PieChart, Users, Mail } from 'lucide-react';
 
 export interface Service {
   id: string;
@@ -6,37 +6,58 @@ export interface Service {
   description: string;
   icon: LucideIcon;
   detail: string;
+  highlights: string[];
+}
+
+export interface CaseStudy {
+  company: string;
+  sector: string;
+  challenge: string;
+  structure: string;
+  result: string;
+  metric: string;
 }
 
 export const SERVICES: Service[] = [
   {
     id: '01',
     title: 'Capital Advisory',
-    description: 'Strategic guidance on capital projects.',
+    description: 'Underwrite the decision before you approach the market.',
     icon: PieChart,
-    detail: 'Assisting clients with projects – acquisitions and location buildouts – requiring strategic guidance, FP&A, and complex financing.'
+    detail: 'We help leadership teams evaluate acquisitions, facility investments, and major equipment decisions with lender-ready analysis and capital-stack guidance.',
+    highlights: ['Acquisition and expansion modeling', 'Lender-ready financial packaging']
   },
   {
     id: '02',
     title: 'Loan Origination',
-    description: 'Access to the right capital partners.',
+    description: 'Source debt from lenders that actually fit the mandate.',
     icon: TrendingUp,
-    detail: 'Matching clients\' financing needs with banks and private lenders to find the best suitability and lowest interest rates.'
+    detail: 'We run disciplined lender outreach across banks, independents, and private credit providers to secure terms that match the asset, timeline, and operating profile.',
+    highlights: ['Senior debt and equipment finance', 'Term, lease, and structured solutions']
   },
   {
     id: '03',
     title: 'Vendor Finance',
-    description: 'Expertly managed vendor-finance portfolios.',
+    description: 'Build financing programs that help equipment sellers close.',
     icon: Users,
-    detail: 'Partnering with equipment dealers and manufacturers to manage their vendor-finance portfolios.'
+    detail: 'For dealers and manufacturers, we design and manage vendor-finance programs that support sales teams, improve conversion, and protect portfolio quality.',
+    highlights: ['Program design and lender placement', 'Ongoing portfolio support']
   },
   {
     id: '04',
     title: 'Affiliate Marketing',
-    description: 'Unlocking new business.',
+    description: 'Activate demand with finance-led outreach.',
     icon: Mail,
-    detail: 'Providing email marketing to generate new leads and financing promotions.'
+    detail: 'We create targeted financing promotions and affiliate campaigns that open qualified conversations with buyers who are ready to move.',
+    highlights: ['Campaign strategy and copy', 'Lead generation for finance offers']
   }
+];
+
+export const NAV_LINKS = [
+  { label: 'Approach', href: '#narrative' },
+  { label: 'Capabilities', href: '#services' },
+  { label: 'Outcomes', href: '#outcomes' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 export const TESTIMONIALS = [
@@ -55,8 +76,27 @@ export const TESTIMONIALS = [
 ];
 
 export const STATS = [
-  { label: 'Capital Deployed', value: '$500M+' },
+  { label: 'Capital Arranged', value: '$500M+' },
   { label: 'Industries Served', value: '40+' },
   { label: 'Client Retention', value: '96%' },
-  { label: 'Partner Banks', value: '50+' },
+  { label: 'Lender Relationships', value: '50+' },
+];
+
+export const CASE_STUDIES: CaseStudy[] = [
+  {
+    company: 'Vertex Manufacturing',
+    sector: 'Manufacturing',
+    challenge: 'Needed capital for an acquisition and equipment refresh without starving working capital during a busy production cycle.',
+    structure: 'Structured an equipment-backed facility with a phased draw schedule and covenant design aligned to seasonal cash flow.',
+    result: 'Delivered a financing package that supported the transaction and preserved operating flexibility through integration.',
+    metric: '$12M commitment',
+  },
+  {
+    company: 'Logistics One',
+    sector: 'Transportation',
+    challenge: 'Had an urgent fleet opportunity with a compressed close window and lenders pushing timelines beyond the operating need.',
+    structure: 'Matched the deal to an execution-focused capital partner and managed diligence tightly from application through documentation.',
+    result: 'Closed the transaction quickly enough to keep the expansion plan intact and the equipment deployment on schedule.',
+    metric: '14-day close',
+  },
 ];

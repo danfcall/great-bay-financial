@@ -1,41 +1,83 @@
 import React from 'react';
-import { STATS, TESTIMONIALS } from '../constants';
 import { Quote } from 'lucide-react';
+import { CASE_STUDIES, STATS, TESTIMONIALS } from '../constants';
 
 const Stats: React.FC = () => {
   return (
-    <section className="py-24 bg-background px-6 md:px-12 border-y border-cream/5">
-      <div className="max-w-7xl mx-auto">
+    <section id="outcomes" className="border-b border-cream/8 px-6 py-20 md:px-10 md:py-28">
+      <div className="section-frame">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-3xl">
+            <div className="eyebrow">Selected outcomes</div>
+            <h2 className="mt-7 font-display text-[clamp(2.8rem,5vw,5.2rem)] leading-[0.92] tracking-[-0.04em] text-white">
+              Results that reflect fit, speed, and disciplined execution.
+            </h2>
+          </div>
+          <p className="max-w-xl text-lg leading-8 text-mist">
+            Great Bay is built for mandates where financing quality matters as much as financing availability. The numbers below only matter because they translate into better decisions and better closes.
+          </p>
+        </div>
 
-        {/* Numbers Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-24">
-          {STATS.map((stat, idx) => (
-            <div key={idx} className="text-center md:text-left">
-              <div className="font-display text-4xl md:text-6xl font-bold text-white mb-2">{stat.value}</div>
-              <div className="text-sm text-cream/70 font-semibold uppercase tracking-wider">{stat.label}</div>
+        <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {STATS.map((stat) => (
+            <div key={stat.label} className="stat-tile rounded-[1.8rem] px-6 py-7">
+              <p className="font-display text-5xl leading-none text-white">{stat.value}</p>
+              <p className="mt-4 text-sm uppercase tracking-[0.18em] text-accentSoft/70">{stat.label}</p>
             </div>
           ))}
         </div>
 
-        {/* Testimonials */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {TESTIMONIALS.map((t, i) => (
-            <div key={i} className="bg-background hover:bg-surface p-8 md:p-12 border border-cream/10 relative hover:border-white/20 transition-colors duration-300 shadow-2xl">
-              <Quote className="w-8 h-8 text-accent mb-6 opacity-80" />
-              <p className="text-xl md:text-2xl leading-relaxed mb-8 text-cream">"{t.quote}"</p>
-              <div className="flex items-center justify-between border-t border-cream/10 pt-6">
+        <div className="mt-16 grid gap-5 xl:grid-cols-2">
+          {CASE_STUDIES.map((study) => (
+            <article key={study.company} className="panel rounded-[2rem] p-8 md:p-10">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="rounded-full border border-accent/25 bg-accent/10 px-3 py-1.5 text-xs uppercase tracking-[0.2em] text-accentSoft">
+                  {study.sector}
+                </span>
+                <span className="grid-label text-[10px] text-cream/50">Selected engagement</span>
+              </div>
+
+              <div className="mt-6 flex items-start justify-between gap-6">
+                <h3 className="font-display text-4xl leading-none text-white">{study.company}</h3>
+                <p className="rounded-full border border-cream/10 bg-white/[0.04] px-4 py-2 text-sm text-accentSoft">{study.metric}</p>
+              </div>
+
+              <div className="mt-8 space-y-6 text-sm leading-7 text-mist">
                 <div>
-                  <div className="font-bold text-cream">{t.author}</div>
-                  <div className="text-sm text-cream/60">{t.role}</div>
+                  <p className="grid-label text-[10px] text-accentSoft/70">Situation</p>
+                  <p className="mt-2">{study.challenge}</p>
                 </div>
-                <div className="text-right">
-                  <div className="text-accent font-mono text-sm">{t.metric}</div>
+                <div>
+                  <p className="grid-label text-[10px] text-accentSoft/70">Structure</p>
+                  <p className="mt-2">{study.structure}</p>
                 </div>
+                <div>
+                  <p className="grid-label text-[10px] text-accentSoft/70">Result</p>
+                  <p className="mt-2 text-cream/84">{study.result}</p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-16 grid gap-5 xl:grid-cols-2">
+          {TESTIMONIALS.map((testimonial) => (
+            <div key={testimonial.author} className="panel rounded-[2rem] p-8 md:p-9">
+              <Quote className="h-9 w-9 text-accent" />
+              <p className="mt-6 text-xl leading-9 text-cream/92">{testimonial.quote}</p>
+              <div className="section-divider my-7" />
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-base font-semibold text-white">{testimonial.author}</p>
+                  <p className="mt-1 text-sm text-mist">{testimonial.role}</p>
+                </div>
+                <p className="rounded-full border border-accent/25 bg-accent/10 px-4 py-2 text-sm text-accentSoft">
+                  {testimonial.metric}
+                </p>
               </div>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
