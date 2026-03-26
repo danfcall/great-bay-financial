@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Narrative from './components/Narrative';
 import Services from './components/Services';
-import Stats from './components/Stats';
 import Conversion from './components/Conversion';
 import Footer from './components/Footer';
 
@@ -15,7 +14,6 @@ const App: React.FC = () => {
         <Hero />
         <Narrative />
         <Services />
-        <Stats />
         <Conversion />
       </main>
       <Footer />

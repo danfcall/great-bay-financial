@@ -13,7 +13,7 @@ const Services: React.FC = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-l border-cream/10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-l border-cream/10">
           {SERVICES.map((service) => (
             <div
               key={service.id}

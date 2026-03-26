@@ -32,8 +32,7 @@ const Navbar: React.FC = () => {
         <div className="hidden md:flex items-center gap-8">
           {[
             { label: 'About us', href: '#narrative' },
-            { label: 'Services', href: '#services' },
-            { label: 'Case Studies', href: '#case studies' }
+            { label: 'Services', href: '#services' }
           ].map((item) => (
             <a
               key={item.label}
@@ -71,7 +70,6 @@ const Navbar: React.FC = () => {
           {[
             { label: 'About us', href: '#narrative' },
             { label: 'Services', href: '#services' },
-            { label: 'Case Studies', href: '#case studies' },
             { label: 'Contact', href: '#contact' }
           ].map((item) => (
             <a
