@@ -48,10 +48,24 @@ const Navbar: React.FC = () => {
         <div className="hidden md:flex">
           <a
             href="#contact"
-            className="flex items-center gap-2 px-6 py-2 border border-cream/20 hover:border-accent hover:text-accent transition-colors duration-300 rounded-full text-sm uppercase tracking-wide group text-cream"
+            className={`relative flex items-center gap-2 px-6 py-2 border rounded-sm text-sm uppercase tracking-wide group overflow-hidden transition-[border-color,color,background-color] duration-500 ${
+              scrolled
+                ? 'border-cream/20 text-cream hover:border-accent/40'
+                : 'border-white/70 text-white hover:border-white'
+            }`}
           >
-            Contact Us
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <span
+              className={`absolute inset-0 bg-gradient-to-br from-surface/20 via-background/90 to-background transition-opacity duration-500 ${
+                scrolled ? 'opacity-100' : 'opacity-0'
+              }`}
+            ></span>
+            <span
+              className={`absolute inset-0 bg-white/5 transition-opacity duration-500 ${
+                scrolled ? 'opacity-0' : 'opacity-0 group-hover:opacity-100'
+              }`}
+            ></span>
+            <span className="relative">Contact Us</span>
+            <ArrowRight className="relative w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
 
