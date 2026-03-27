@@ -11,7 +11,7 @@ const Conversion: React.FC = () => {
       {/* Background Video */}
       <div className="absolute inset-0 w-full h-full z-[1] overflow-hidden pointer-events-none">
         <div className="absolute inset-0 w-full h-full">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-[177.78vh] h-[56.25vw]">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-[320vh] h-[180vh] sm:w-[240vh] sm:h-[135vh] md:w-[177.78vh] md:h-[56.25vw]">
             <WistiaPlayer
               media-id="i952bbp1q2"
               aspect="1.7777777777777777"

@@ -239,8 +239,10 @@ const Hero: React.FC = () => {
           >
             <span className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(232,222,201,0.1),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(26,61,93,0.38),transparent_44%)] opacity-90 pointer-events-none"></span>
             <span className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-accent/35 via-cream/10 to-transparent pointer-events-none"></span>
-            <span className="relative">LEARN MORE</span>
-            <ArrowDownRight className="relative w-5 h-5 group-hover/cta:rotate-45 transition-transform duration-300" />
+            <span className="relative inline-flex items-center justify-center gap-4 translate-x-1">
+              <span>LEARN MORE</span>
+              <ArrowDownRight className="w-5 h-5 group-hover/cta:rotate-45 transition-transform duration-300" />
+            </span>
           </a>
 
           {/* Scroll Down Line connected to CTA hover */}
