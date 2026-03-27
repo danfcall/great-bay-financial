@@ -50,7 +50,7 @@ const Navbar: React.FC = () => {
             href="#contact"
             className="flex items-center gap-2 px-6 py-2 border border-cream/20 hover:border-accent hover:text-accent transition-colors duration-300 rounded-full text-sm uppercase tracking-wide group text-cream"
           >
-            Get Funded
+            Contact Us
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>

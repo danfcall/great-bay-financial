@@ -1,39 +1,33 @@
 import React from 'react';
-import { AlertTriangle, CheckCircle2 } from 'lucide-react';
+import SectionIntro from './SectionIntro';
 
 const Narrative: React.FC = () => {
   return (
     <section id="narrative" className="py-24 md:py-32 px-6 md:px-12 border-b border-cream/5 relative overflow-hidden bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row gap-16 md:gap-24">
-
-          <div className="md:w-1/3 sticky top-32 h-fit">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 text-cream leading-tight">
-              The Great <span className="text-accent">Bay</span><br />Approach
-            </h2>
+          <div className="md:w-1/3">
+            <SectionIntro
+              eyebrow="Approach"
+              title="The Great Bay "
+              accent="Way"
+              sticky
+              stickyClassName="md:top-12"
+              accentInline
+            />
           </div>
 
           <div className="md:w-2/3 space-y-16">
+            <div className="relative max-w-3xl ml-auto overflow-hidden border border-cream/10 bg-gradient-to-br from-surface/32 via-background/88 to-background/100 shadow-[0_32px_90px_rgba(4,10,24,0.4)]">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(232,222,201,0.12),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(26,61,93,0.45),transparent_42%)] pointer-events-none"></div>
+              <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-accent/45 via-cream/10 to-transparent"></div>
 
-            {/* Solution Card */}
-            <div className="relative p-8 md:p-12 border border-accent/20 bg-accent/5 max-w-2xl mx-auto">
-              <div className="absolute -top-6 -left-6 w-12 h-12 bg-accent/20 text-accent flex items-center justify-center rounded-full border border-accent/50">
-                <CheckCircle2 className="w-6 h-6" />
-              </div>
-
-              <div className="text-lg text-cream leading-relaxed space-y-6">
-                <p>
-                  We bring financial expertise and flexibility most small businesses don’t have access to.
-                </p>
-                <p>
-                  With 40 years of industry experience and long-standing dealer and lender relationships, we structure creative equipment-backed financing others miss—or can’t execute quickly.
-                </p>
-                <p>
-                  We combine capital access with financial analysis and guidance, helping businesses optimize decisions instead of guessing or settling.
+              <div className="relative px-8 py-10 md:px-12 md:py-12">
+                <p className="max-w-2xl text-xl md:text-[1.9rem] leading-[1.4] md:leading-[1.38] text-cream/88">
+                  With 40 years of industry experience, we bring small and medium businesses the financial expertise and flexibility they don't typically have access to, helping them secure capital and navigate M&amp;A, while also building vendor programs that increase sales and improve cash flow.
                 </p>
               </div>
             </div>
-
           </div>
         </div>
       </div>

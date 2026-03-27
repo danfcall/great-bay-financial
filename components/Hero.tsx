@@ -235,10 +235,12 @@ const Hero: React.FC = () => {
 
           <a
             href="#narrative"
-            className="inline-flex items-center justify-center px-10 py-5 bg-accent text-background font-bold uppercase tracking-wider hover:bg-cream transition-colors duration-300 shadow-[0_0_40px_rgba(238,211,177,0.15)] hover:shadow-[0_0_60px_rgba(238,211,177,0.3)] text-sm rounded-sm z-30 peer relative"
+            className="inline-flex items-center justify-center gap-4 px-10 py-5 border border-cream/15 bg-gradient-to-br from-surface/30 via-background/92 to-background text-cream font-bold uppercase tracking-wider transition-all duration-300 shadow-[0_18px_40px_rgba(4,10,24,0.32)] hover:border-accent/30 hover:shadow-[0_24px_54px_rgba(4,10,24,0.45)] text-sm rounded-sm z-30 peer relative overflow-hidden"
           >
-            <span>LEARN MORE</span>
-            <ArrowDownRight className="w-5 h-5 ml-4 group-hover/cta:rotate-45 transition-transform duration-300" />
+            <span className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(232,222,201,0.1),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(26,61,93,0.38),transparent_44%)] opacity-90 pointer-events-none"></span>
+            <span className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-accent/35 via-cream/10 to-transparent pointer-events-none"></span>
+            <span className="relative">LEARN MORE</span>
+            <ArrowDownRight className="relative w-5 h-5 group-hover/cta:rotate-45 transition-transform duration-300" />
           </a>
 
           {/* Scroll Down Line connected to CTA hover */}
