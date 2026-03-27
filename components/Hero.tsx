@@ -157,7 +157,7 @@ const Hero: React.FC = () => {
     >
       {/* Video Background */}
       <div className="absolute inset-0 w-full h-full z-0 bg-background">
-        <div className="absolute inset-0 bg-background/40 z-10"></div>
+        <div className="absolute inset-0 bg-background/30 z-10"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-10"></div>
 
         {/* Wistia Background Wrapper */}
