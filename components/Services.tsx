@@ -7,8 +7,8 @@ const Services: React.FC = () => {
   return (
     <section id="services" className="py-24 md:py-32 px-6 md:px-12 bg-background relative z-10">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row gap-16 md:gap-24">
-          <div className="md:w-1/3">
+        <div className="flex flex-col gap-16 md:gap-20 xl:flex-row xl:gap-24">
+          <div className="xl:w-1/3">
             <SectionIntro
               eyebrow="Services"
               title="Great Bay"
@@ -16,8 +16,8 @@ const Services: React.FC = () => {
             />
           </div>
 
-          <div className="md:w-2/3">
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-0 border-t border-l border-cream/10">
+          <div className="xl:w-2/3">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-l border-cream/10">
               {SERVICES.map((service) => (
                 <div
                   key={service.id}
