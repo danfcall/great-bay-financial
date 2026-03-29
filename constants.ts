@@ -18,16 +18,16 @@ export const SERVICES: Service[] = [
   },
   {
     id: '02',
-    title: 'Vendor Solutions',
-    description: 'Programs that support vendor growth and cash flow.',
+    title: 'B2B Solutions',
+    description: 'Building B2B programs that generate new leads and accelerate receivables turnover.',
     icon: Network,
-    detail: 'Building programs for vendors to help increase sales and improve cash flow.'
+    detail: 'Building B2B programs that generate new leads and accelerate receivables turnover to increase sales and optimize cash flow.'
   },
   {
     id: '03',
     title: 'Alternative Assets',
-    description: 'Helping businesses access capital.',
+    description: 'Helping small and medium businesses access private capital.',
     icon: Landmark,
-    detail: 'Helping small and medium businesses access capital.'
+    detail: 'Helping small and medium businesses access private capital.'
   }
 ];

@@ -73,13 +73,23 @@ const Conversion: React.FC = () => {
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm uppercase tracking-widest text-cream/60 mb-2">Email</label>
-                  <input
-                    type="email"
-                    className="w-full bg-background/35 border border-cream/15 px-4 py-3.5 text-cream focus:outline-none focus:border-accent transition-colors placeholder-cream/20 backdrop-blur-sm"
-                    placeholder="email@company.com"
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-sm uppercase tracking-widest text-cream/60 mb-2">Email</label>
+                    <input
+                      type="email"
+                      className="w-full bg-background/35 border border-cream/15 px-4 py-3.5 text-cream focus:outline-none focus:border-accent transition-colors placeholder-cream/20 backdrop-blur-sm"
+                      placeholder="email@company.com"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm uppercase tracking-widest text-cream/60 mb-2">Phone</label>
+                    <input
+                      type="tel"
+                      className="w-full bg-background/35 border border-cream/15 px-4 py-3.5 text-cream focus:outline-none focus:border-accent transition-colors placeholder-cream/20 backdrop-blur-sm"
+                      placeholder="(555) 123-4567"
+                    />
+                  </div>
                 </div>
 
                 <div>
@@ -91,7 +101,11 @@ const Conversion: React.FC = () => {
                   />
                 </div>
 
-                <div className="flex flex-col md:flex-row md:items-center md:justify-end gap-5 pt-4">
+                <p className="text-xs leading-relaxed text-cream/50 pt-1">
+                  By submitting this form, you agree to receive email and SMS communications from us
+                </p>
+
+                <div className="flex flex-col md:flex-row md:items-center md:justify-end gap-5 pt-3">
                   <button className="group w-full md:w-auto md:min-w-[260px] bg-accent text-background font-bold uppercase tracking-widest px-8 py-5 flex items-center justify-center gap-2 hover:bg-cream hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(232,222,201,0.18)] transition-all duration-300">
                     Start Conversation <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
