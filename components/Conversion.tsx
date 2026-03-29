@@ -48,7 +48,7 @@ const Conversion: React.FC = () => {
       {/* Background Video */}
       <div className="absolute inset-0 w-full h-full z-[1] overflow-hidden pointer-events-none">
         <div className="absolute inset-0 w-full h-full">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-[320vh] h-[180vh] sm:w-[240vh] sm:h-[135vh] md:w-[177.78vh] md:h-[56.25vw]">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-[320vh] h-[180vh] sm:w-[284.44vh] sm:h-[160vh] md:w-[266.67vh] md:h-[150vh] lg:w-[248.89vh] lg:h-[140vh]">
             <WistiaPlayer
               media-id="i952bbp1q2"
               aspect="1.7777777777777777"
@@ -151,7 +151,7 @@ const Conversion: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm uppercase tracking-widest text-cream/60 mb-2">What are you exploring?</label>
+                  <label className="block text-sm uppercase tracking-widest text-cream/60 mb-2">How can we help?</label>
                   <textarea
                     name="message"
                     rows={5}
@@ -171,7 +171,7 @@ const Conversion: React.FC = () => {
                   <span>By submitting this form, you agree to receive email and SMS communications from us</span>
                 </label>
 
-                <div className="min-h-[68px]">
+                <div className="min-h-[16px]">
                   {submissionState === 'success' && (
                     <p className="border border-emerald-300/25 bg-emerald-300/10 px-4 py-3 text-sm leading-relaxed text-emerald-100" aria-live="polite">
                       Thanks. Your message was sent successfully, and we&apos;ll be in touch shortly.
