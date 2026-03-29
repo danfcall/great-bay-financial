@@ -190,7 +190,7 @@ const Hero: React.FC = () => {
         <div className="relative mb-8">
           <div
             aria-hidden="true"
-            className="absolute inset-0 font-display text-[14vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[160px] leading-[0.9] font-bold tracking-tighter pointer-events-none select-none"
+            className="absolute inset-0 font-display text-[17vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[160px] leading-[0.9] font-bold tracking-tighter pointer-events-none select-none"
             style={{ color: 'transparent', WebkitTextStroke: '1px rgba(232, 221, 200, 0.95)' }}
           >
             {WORDS.map((word) => (
@@ -209,7 +209,7 @@ const Hero: React.FC = () => {
             onMouseEnter={handleMouseEnter}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            className="relative font-display text-[14vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[160px] leading-[0.9] font-bold tracking-tighter text-cream drop-shadow-2xl cursor-default select-none"
+            className="relative font-display text-[17vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[160px] leading-[0.9] font-bold tracking-tighter text-cream drop-shadow-2xl cursor-default select-none"
           >
             {WORDS.map((word) => (
               <span
