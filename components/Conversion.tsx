@@ -99,11 +99,6 @@ const Conversion: React.FC = () => {
                 onSubmit={handleSubmit}
               >
                 <input type="hidden" name="form-name" value="contact" />
-                <input
-                  type="hidden"
-                  name="marketing_opt_in"
-                  value="By submitting this form, you agree to receive email and SMS communications from us"
-                />
                 <p className="hidden">
                   <label>
                     Don&apos;t fill this out if you&apos;re human:
@@ -165,21 +160,30 @@ const Conversion: React.FC = () => {
                   />
                 </div>
 
-                <p className="text-xs leading-relaxed text-cream/50 pt-1">
-                  By submitting this form, you agree to receive email and SMS communications from us
-                </p>
+                <label className="flex items-start gap-3 pt-1 text-xs leading-relaxed text-cream/60">
+                  <input
+                    type="checkbox"
+                    name="marketing_opt_in"
+                    value="agreed"
+                    defaultChecked
+                    className="mt-0.5 h-4 w-4 border border-cream/30 bg-background/35 accent-accent"
+                  />
+                  <span>By submitting this form, you agree to receive email and SMS communications from us</span>
+                </label>
 
-                {submissionState === 'success' && (
-                  <p className="border border-emerald-300/25 bg-emerald-300/10 px-4 py-3 text-sm leading-relaxed text-emerald-100" aria-live="polite">
-                    Thanks. Your message was sent successfully, and we&apos;ll be in touch shortly.
-                  </p>
-                )}
+                <div className="min-h-[68px]">
+                  {submissionState === 'success' && (
+                    <p className="border border-emerald-300/25 bg-emerald-300/10 px-4 py-3 text-sm leading-relaxed text-emerald-100" aria-live="polite">
+                      Thanks. Your message was sent successfully, and we&apos;ll be in touch shortly.
+                    </p>
+                  )}
 
-                {submissionState === 'error' && (
-                  <p className="border border-amber-300/25 bg-amber-300/10 px-4 py-3 text-sm leading-relaxed text-amber-100" aria-live="polite">
-                    Something went wrong while sending your message. Please try again in a moment or email us directly.
-                  </p>
-                )}
+                  {submissionState === 'error' && (
+                    <p className="border border-amber-300/25 bg-amber-300/10 px-4 py-3 text-sm leading-relaxed text-amber-100" aria-live="polite">
+                      Something went wrong while sending your message. Please try again in a moment or email us directly.
+                    </p>
+                  )}
+                </div>
 
                 <div className="flex flex-col md:flex-row md:items-center md:justify-end gap-5 pt-3">
                   <button
