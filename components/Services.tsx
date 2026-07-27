@@ -11,8 +11,8 @@ const Services: React.FC = () => {
           <div className="xl:w-1/3">
             <SectionIntro
               eyebrow="Services"
-              title="Great Bay"
-              accent="Solutions"
+              title="What We"
+              accent="Do"
             />
           </div>
 
@@ -28,8 +28,7 @@ const Services: React.FC = () => {
 
                   <div className="relative z-10">
                     <service.icon className="w-10 h-10 text-cream/10 group-hover:text-accent/40 transition-colors duration-500 mb-6" />
-                    <h3 className="text-2xl font-bold mb-3 text-cream">{service.title}</h3>
-                    <p className="text-sm text-cream/40 leading-relaxed">{service.detail}</p>
+                    <h3 className="text-2xl font-bold text-cream">{service.title}</h3>
                   </div>
 
                   <div className="relative z-10 mt-6 overflow-hidden h-5">

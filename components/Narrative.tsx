@@ -24,7 +24,7 @@ const Narrative: React.FC = () => {
 
               <div className="relative px-8 py-10 md:px-12 md:py-12">
                 <p className="max-w-2xl text-xl md:text-[1.9rem] leading-[1.4] md:leading-[1.38] text-cream/88">
-                  We bring small and medium businesses institutional-level financial expertise and tools that have traditionally only been available to large companies. With over 40 years of industry experience, our team will help you win business.
+                  We are a private investment company focused on opportunities that strengthen New England businesses and communities. Through thoughtful capital allocation and strategic partnerships, our investments address unique challenges while creating lasting value.
                 </p>
               </div>
             </div>

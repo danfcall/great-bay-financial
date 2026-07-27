@@ -2,9 +2,9 @@ import React, { useRef, useCallback, useEffect } from 'react';
 import { ArrowDownRight } from 'lucide-react';
 
 const WORDS = [
-  { text: 'VISION', animationClass: 'opacity-0 animate-[fadeInUp_0.8s_ease-out_0.2s_forwards]' },
-  { text: 'MEETS', animationClass: 'opacity-0 animate-[fadeInUp_0.8s_ease-out_0.4s_forwards]' },
-  { text: 'CAPITAL', animationClass: 'opacity-0 animate-[fadeInUp_0.8s_ease-out_0.6s_forwards]' },
+  { text: 'LIQUIDITY.', animationClass: 'opacity-0 animate-[fadeInUp_0.8s_ease-out_0.2s_forwards]' },
+  { text: 'GROWTH.', animationClass: 'opacity-0 animate-[fadeInUp_0.8s_ease-out_0.4s_forwards]' },
+  { text: 'FREEDOM.', animationClass: 'opacity-0 animate-[fadeInUp_0.8s_ease-out_0.6s_forwards]' },
 ];
 
 const Hero: React.FC = () => {
@@ -190,11 +190,11 @@ const Hero: React.FC = () => {
         <div className="relative mb-8">
           <div
             aria-hidden="true"
-            className="absolute inset-0 font-display text-[17vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[160px] leading-[0.9] font-bold tracking-tighter pointer-events-none select-none"
+            className="absolute inset-0 font-display text-[14vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[160px] leading-[0.9] font-bold tracking-tighter pointer-events-none select-none"
             style={{ color: 'transparent', WebkitTextStroke: '1px rgba(232, 221, 200, 0.95)' }}
           >
             {WORDS.map((word) => (
-              <span key={`base-${word.text}`} className={`block ${word.animationClass}`}>
+              <span key={`base-${word.text}`} className={`block whitespace-nowrap ${word.animationClass}`}>
                 {word.text.split('').map((letter, i) => (
                   <span key={`base-${word.text}-${i}`} style={{ display: 'inline-block' }}>
                     {letter}
@@ -209,12 +209,12 @@ const Hero: React.FC = () => {
             onMouseEnter={handleMouseEnter}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            className="relative font-display text-[17vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[160px] leading-[0.9] font-bold tracking-tighter text-cream drop-shadow-2xl cursor-default select-none"
+            className="relative font-display text-[14vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[160px] leading-[0.9] font-bold tracking-tighter text-cream drop-shadow-2xl cursor-default select-none"
           >
             {WORDS.map((word) => (
               <span
                 key={word.text}
-                className={`block ${word.animationClass} ${word.text === 'MEETS' ? 'text-outline text-accent' : ''}`}
+                className={`block whitespace-nowrap ${word.animationClass} ${word.text === 'GROWTH.' ? 'text-outline text-accent' : ''}`}
               >
                 {word.text.split('').map((letter, i) => (
                   <span
