@@ -1,8 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Narrative from './components/Narrative';
-import Services from './components/Services';
+import Approach from './components/Approach';
 import Conversion from './components/Conversion';
 import Footer from './components/Footer';
 
@@ -12,8 +11,7 @@ const App: React.FC = () => {
       <Navbar />
       <main>
         <Hero />
-        <Narrative />
-        <Services />
+        <Approach />
         <Conversion />
       </main>
       <Footer />

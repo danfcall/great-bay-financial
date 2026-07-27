@@ -31,8 +31,7 @@ const Navbar: React.FC = () => {
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           {[
-            { label: 'About us', href: '#narrative' },
-            { label: 'Services', href: '#services' }
+            { label: 'About us', href: '#approach' }
           ].map((item) => (
             <a
               key={item.label}
@@ -82,8 +81,7 @@ const Navbar: React.FC = () => {
       {mobileOpen && (
         <div className="absolute top-full left-0 right-0 bg-background border-b border-cream/10 p-6 md:hidden flex flex-col gap-6">
           {[
-            { label: 'About us', href: '#narrative' },
-            { label: 'Services', href: '#services' },
+            { label: 'About us', href: '#approach' },
             { label: 'Contact', href: '#contact' }
           ].map((item) => (
             <a
