@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
             </h1>
 
             <p className="opacity-0 animate-[fadeInUp_1.1s_cubic-bezier(0.16,1,0.3,1)_0.65s_forwards] mt-8 md:mt-9 max-w-xl font-sans text-base md:text-[1.0625rem] font-light leading-[1.7] text-cream/70 text-pretty">
-              We are a private investment company focused on opportunities that strengthen New England businesses and communities. Through thoughtful capital allocation and strategic partnerships, our investments address unique challenges while creating lasting value.
+              Great Bay is a holding company focused on select investments across New England. Through disciplined capital allocation and a long-term investment philosophy, we preserve and grow generational wealth.
             </p>
 
             {/* One quiet action. The page's only filled button belongs to the
