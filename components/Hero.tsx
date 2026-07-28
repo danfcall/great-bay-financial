@@ -78,7 +78,7 @@ const Hero: React.FC = () => {
               {/* Portrait crop on desktop, but bounded by the viewport so the
                   hero still resolves in one screen. */}
               <div className="relative aspect-[3/2] sm:aspect-[16/10] lg:aspect-auto lg:h-[clamp(18rem,46vh,28rem)] overflow-hidden bg-background">
-                <div className="absolute left-1/2 top-1/2 h-full aspect-video -translate-x-1/2 -translate-y-1/2 pointer-events-none [filter:saturate(0.72)_contrast(1.04)_brightness(0.88)]">
+                <div className="absolute left-1/2 top-1/2 h-full aspect-video -translate-x-1/2 -translate-y-1/2 pointer-events-none [filter:saturate(0.86)_contrast(1.02)_brightness(1)]">
                   <WistiaPlayer
                     media-id="l5jef1dyo0"
                     aspect="1.7777777777777777"
@@ -101,10 +101,10 @@ const Hero: React.FC = () => {
 
                 {/* Grade the footage toward the page's navy so the frame reads
                     as part of the composition rather than a window cut into it. */}
-                <div className="absolute inset-0 pointer-events-none bg-background/30"></div>
-                <div className="absolute inset-0 pointer-events-none bg-surface/25 mix-blend-color"></div>
-                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-background/75 via-transparent to-background/30"></div>
-                <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_110px_rgba(10,22,40,0.85)]"></div>
+                <div className="absolute inset-0 pointer-events-none bg-background/12"></div>
+                <div className="absolute inset-0 pointer-events-none bg-surface/20 mix-blend-color"></div>
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-background/45 via-transparent to-background/12"></div>
+                <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_80px_rgba(10,22,40,0.45)]"></div>
               </div>
             </figure>
           </div>
