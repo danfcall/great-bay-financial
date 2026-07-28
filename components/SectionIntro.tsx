@@ -31,13 +31,13 @@ const SectionIntro: React.FC<SectionIntroProps> = ({
       <div className={`flex max-w-md flex-col gap-6 ${alignmentClasses}`}>
         <div className="inline-flex items-center gap-3">
           <span className="h-px w-12 bg-accent/60"></span>
-          <span className="text-accent uppercase tracking-[0.38em] text-xs font-semibold">
+          <span className="text-accent/85 uppercase tracking-[0.26em] text-[0.6875rem] font-medium">
             {eyebrow}
           </span>
         </div>
 
         <div className="space-y-4">
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-cream leading-[0.95]">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-cream leading-[0.95] tracking-[-0.02em] text-balance">
             {accentInline ? (
               <span>
                 {title}

@@ -108,21 +108,21 @@ const Conversion: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm uppercase tracking-widest text-cream/60 mb-2">Name</label>
+                    <label className="block text-xs uppercase tracking-[0.18em] text-cream/65 mb-2.5">Name</label>
                     <input
                       type="text"
                       name="name"
                       required
-                      className="w-full bg-background/35 border border-cream/15 px-4 py-3.5 text-cream focus:outline-none focus:border-accent transition-colors placeholder-cream/20 backdrop-blur-sm"
+                      className="w-full bg-background/35 border border-cream/15 px-4 py-3.5 text-cream transition-colors placeholder-cream/55 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/35"
                       placeholder="Enter your full name"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm uppercase tracking-widest text-cream/60 mb-2">Company</label>
+                    <label className="block text-xs uppercase tracking-[0.18em] text-cream/65 mb-2.5">Company</label>
                     <input
                       type="text"
                       name="company"
-                      className="w-full bg-background/35 border border-cream/15 px-4 py-3.5 text-cream focus:outline-none focus:border-accent transition-colors placeholder-cream/20 backdrop-blur-sm"
+                      className="w-full bg-background/35 border border-cream/15 px-4 py-3.5 text-cream transition-colors placeholder-cream/55 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/35"
                       placeholder="Company name"
                     />
                   </div>
@@ -130,32 +130,32 @@ const Conversion: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm uppercase tracking-widest text-cream/60 mb-2">Email</label>
+                    <label className="block text-xs uppercase tracking-[0.18em] text-cream/65 mb-2.5">Email</label>
                     <input
                       type="email"
                       name="email"
                       required
-                      className="w-full bg-background/35 border border-cream/15 px-4 py-3.5 text-cream focus:outline-none focus:border-accent transition-colors placeholder-cream/20 backdrop-blur-sm"
+                      className="w-full bg-background/35 border border-cream/15 px-4 py-3.5 text-cream transition-colors placeholder-cream/55 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/35"
                       placeholder="email@company.com"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm uppercase tracking-widest text-cream/60 mb-2">Phone</label>
+                    <label className="block text-xs uppercase tracking-[0.18em] text-cream/65 mb-2.5">Phone</label>
                     <input
                       type="tel"
                       name="phone"
-                      className="w-full bg-background/35 border border-cream/15 px-4 py-3.5 text-cream focus:outline-none focus:border-accent transition-colors placeholder-cream/20 backdrop-blur-sm"
+                      className="w-full bg-background/35 border border-cream/15 px-4 py-3.5 text-cream transition-colors placeholder-cream/55 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/35"
                       placeholder="(555) 123-4567"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm uppercase tracking-widest text-cream/60 mb-2">How can we help?</label>
+                  <label className="block text-xs uppercase tracking-[0.18em] text-cream/65 mb-2.5">How can we help?</label>
                   <textarea
                     name="message"
                     rows={5}
-                    className="w-full resize-none bg-background/35 border border-cream/15 px-4 py-3.5 text-cream focus:outline-none focus:border-accent transition-colors placeholder-cream/20 backdrop-blur-sm"
+                    className="w-full resize-none bg-background/35 border border-cream/15 px-4 py-3.5 text-cream transition-colors placeholder-cream/55 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/35"
                     placeholder="Tell us about the opportunity, financing need, or transaction you're considering."
                   />
                 </div>

@@ -74,6 +74,39 @@
       background-color: #0A1628;
       color: #E8DDC8;
       overflow-x: hidden;
+      /* Light type on a dark ground renders heavy by default; grayscale
+         smoothing keeps the cream text from blooming into the navy. */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* One focus treatment for the whole site. The UA default outline is
+       near-invisible against #0A1628. */
+    :focus-visible {
+      outline: 1px solid #E8DEC9;
+      outline-offset: 3px;
+    }
+
+    /* Content is visible by default; motion is an enhancement on top of it. */
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      /* The hero words and CTA start at opacity-0 and are revealed by an
+         animation. With animations suppressed they must not stay invisible. */
+      [class*="animate-[fadeIn"] {
+        opacity: 1 !important;
+        filter: none !important;
+        transform: none !important;
+      }
     }
 
     /* Smooth Scrolling handled by JS below */
@@ -170,6 +203,10 @@
       if (!target) return;
       e.preventDefault();
       const targetY = target.getBoundingClientRect().top + window.scrollY;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        window.scrollTo(0, targetY);
+        return;
+      }
       smoothScrollTo(targetY, 1200);
     });
   </script>

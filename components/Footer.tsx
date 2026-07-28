@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
           </a>
         </div>
 
-        <p className="text-xs text-cream/30">
+        <p className="text-xs text-cream/55">
           &copy; {new Date().getFullYear()} Great Bay Financial. All rights reserved.
         </p>
       </div>
