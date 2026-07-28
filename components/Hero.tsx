@@ -31,13 +31,6 @@ const Hero: React.FC = () => {
 
           {/* Type column */}
           <div className="lg:col-span-7 xl:col-span-6">
-            <div className="opacity-0 animate-[fadeIn_1.2s_ease-out_0.1s_forwards] inline-flex items-center gap-4 mb-9 md:mb-11">
-              <span className="h-px w-12 bg-accent/50"></span>
-              <span className="font-sans text-[0.6875rem] font-light uppercase tracking-[0.18em] sm:tracking-[0.32em] text-accent/80">
-                Connecting Vision with Capital
-              </span>
-            </div>
-
             <h1 className="font-display font-normal text-cream text-[clamp(2.75rem,5.6vw,4.75rem)] leading-[1.06] tracking-[-0.02em]">
               {LINES.map((line) => (
                 <span
