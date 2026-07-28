@@ -28,22 +28,8 @@ const Navbar: React.FC = () => {
           />
         </a>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
-          {[
-            { label: 'About us', href: '#approach' }
-          ].map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="font-sans text-[0.6875rem] font-medium text-cream/65 hover:text-accent transition-colors duration-500 uppercase tracking-[0.24em]"
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
-
-        {/* CTA */}
+        {/* CTA. The page is a single scroll now, so the only nav target is
+            the form; a lone "About us" link had nowhere left to point. */}
         <div className="hidden md:flex">
           <a
             href="#contact"
@@ -66,19 +52,13 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
       {mobileOpen && (
         <div className="absolute top-full left-0 right-0 bg-background border-b border-cream/10 p-6 md:hidden flex flex-col gap-6">
-          {[
-            { label: 'About us', href: '#approach' },
-            { label: 'Contact', href: '#contact' }
-          ].map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="text-2xl font-display font-normal tracking-[-0.01em] text-cream hover:text-accent transition-colors"
-              onClick={() => setMobileOpen(false)}
-            >
-              {item.label}
-            </a>
-          ))}
+          <a
+            href="#contact"
+            className="text-2xl font-display font-normal tracking-[-0.01em] text-cream hover:text-accent transition-colors"
+            onClick={() => setMobileOpen(false)}
+          >
+            Contact
+          </a>
         </div>
       )}
     </nav>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDownRight, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { SERVICES } from '../constants';
 
 /* The slogan is set as three stacked lines rather than one block of caps.
@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
         <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-background to-transparent"></div>
       </div>
 
-      <div className="flex-1 flex items-center px-6 md:px-12 pt-32 pb-12 md:pt-36 md:pb-14 relative z-10">
+      <div className="flex-1 flex items-center px-6 md:px-12 pt-32 pb-12 md:pt-36 md:pb-10 relative z-10">
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 items-center gap-y-12 lg:gap-x-16">
 
           {/* Type column */}
@@ -51,30 +51,19 @@ const Hero: React.FC = () => {
               ))}
             </h1>
 
-            <p className="opacity-0 animate-[fadeInUp_1.1s_cubic-bezier(0.16,1,0.3,1)_0.65s_forwards] mt-8 md:mt-10 max-w-xl font-sans text-base md:text-lg font-light leading-[1.75] text-cream/70 text-pretty">
-              We are a private investment company focused on opportunities that strengthen New England businesses and communities.
+            <p className="opacity-0 animate-[fadeInUp_1.1s_cubic-bezier(0.16,1,0.3,1)_0.65s_forwards] mt-8 md:mt-9 max-w-xl font-sans text-base md:text-[1.0625rem] font-light leading-[1.7] text-cream/70 text-pretty">
+              We are a private investment company focused on opportunities that strengthen New England businesses and communities. Through thoughtful capital allocation and strategic partnerships, our investments address unique challenges while creating lasting value.
             </p>
 
-            {/* Two quiet actions. The single filled button on the page belongs
-                to the contact form; here both read as hairlines. */}
-            <div className="opacity-0 animate-[fadeIn_1.2s_ease-out_0.95s_forwards] mt-10 md:mt-12 flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8">
+            {/* One quiet action. The page's only filled button belongs to the
+                contact form, so this reads as a hairline. */}
+            <div className="opacity-0 animate-[fadeIn_1.2s_ease-out_0.95s_forwards] mt-9 md:mt-11">
               <a
                 href="#contact"
                 className="group inline-flex items-center justify-center gap-3 border border-accent/40 px-9 py-4 font-sans text-xs font-medium uppercase tracking-[0.2em] text-accent transition-colors duration-500 hover:bg-accent hover:text-background"
               >
                 <span>Start Conversation</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" />
-              </a>
-
-              <a
-                href="#approach"
-                className="group inline-flex items-center gap-3 py-2 font-sans text-xs font-medium uppercase tracking-[0.2em] text-cream/65 transition-colors duration-500 hover:text-cream"
-              >
-                <span className="relative">
-                  Learn More
-                  <span className="absolute -bottom-1.5 left-0 h-px w-full origin-right scale-x-0 bg-cream/50 transition-transform duration-500 group-hover:origin-left group-hover:scale-x-100"></span>
-                </span>
-                <ArrowDownRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-y-0.5" />
               </a>
             </div>
           </div>
@@ -122,11 +111,16 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Index rail. The three focus areas, stated once, as a table of
-          contents for the page rather than a row of cards. */}
-      <div className="relative z-10 px-6 md:px-12 pb-10 md:pb-12 opacity-0 animate-[fadeIn_1.2s_ease-out_1.2s_forwards]">
-        <div className="max-w-7xl mx-auto border-t border-cream/15">
-          <ul className="grid grid-cols-1 sm:grid-cols-3">
+      {/* Index rail. The three focus areas as a table of contents rather than
+          a row of cards — labelled, so the list reads as an answer to a
+          question the visitor is already asking. */}
+      <div className="relative z-10 px-6 md:px-12 pb-10 opacity-0 animate-[fadeIn_1.2s_ease-out_1.2s_forwards]">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="mb-5 font-sans text-[0.6875rem] font-light uppercase tracking-[0.18em] sm:tracking-[0.32em] text-accent/80">
+            What We Do
+          </h2>
+
+          <ul className="grid grid-cols-1 sm:grid-cols-3 border-t border-cream/15">
             {SERVICES.map((service) => (
               <li
                 key={service.id}

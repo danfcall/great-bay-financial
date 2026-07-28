@@ -85,7 +85,7 @@ const Conversion: React.FC = () => {
       <div className="absolute inset-0 bg-background/82 z-[2] pointer-events-none"></div>
       <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/55 z-[2] pointer-events-none"></div>
 
-      {/* Longer top gradient fade from the approach section */}
+      {/* Longer top gradient fade out of the hero */}
       <div className="absolute top-0 left-0 right-0 h-72 md:h-80 bg-gradient-to-b from-background via-background/92 to-transparent z-[3] pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 right-0 h-56 bg-gradient-to-t from-background to-transparent z-[3] pointer-events-none"></div>
 
