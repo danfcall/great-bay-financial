@@ -2,6 +2,15 @@ import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import SectionIntro from './SectionIntro';
 
+/* Underline fields rather than boxes. A grid of outlined rectangles reads as
+   an application form; a ruled line under each answer reads as stationery,
+   and it keeps the only hard edges on the page for the panel itself. */
+const labelClass =
+  'block font-sans text-[0.6875rem] font-medium uppercase tracking-[0.22em] text-cream/55 mb-3';
+
+const fieldClass =
+  'w-full bg-transparent border-0 border-b border-cream/20 px-0 py-3 font-sans text-base font-light text-cream transition-colors duration-300 placeholder-cream/35 hover:border-cream/35 focus:outline-none focus:border-accent focus:ring-0';
+
 const Conversion: React.FC = () => {
   const WistiaPlayer = 'wistia-player' as any;
   const [submissionState, setSubmissionState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -70,12 +79,15 @@ const Conversion: React.FC = () => {
         </div>
       </div>
 
-      {/* Overlays for readability */}
-      <div className="absolute inset-0 bg-background/75 z-[2] pointer-events-none"></div>
+      {/* Overlays for readability. The horizon band in this footage is the
+          brightest thing on the page; the left wash keeps it from running
+          under the heading and lede. */}
+      <div className="absolute inset-0 bg-background/82 z-[2] pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/55 z-[2] pointer-events-none"></div>
 
-      {/* Longer top gradient fade from services section */}
+      {/* Longer top gradient fade from the approach section */}
       <div className="absolute top-0 left-0 right-0 h-72 md:h-80 bg-gradient-to-b from-background via-background/92 to-transparent z-[3] pointer-events-none"></div>
-      <div className="absolute inset-0 z-[4]" aria-hidden="true"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-56 bg-gradient-to-t from-background to-transparent z-[3] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row lg:items-start gap-14 lg:gap-20">
@@ -89,13 +101,14 @@ const Conversion: React.FC = () => {
           </div>
 
           <div className="lg:w-[66%]">
-            <div className="border border-cream/15 bg-surface/20 backdrop-blur-md p-8 md:p-10 lg:p-12 shadow-[0_30px_80px_rgba(3,8,16,0.35)]">
+            <div className="relative border border-cream/15 bg-background/60 backdrop-blur-xl p-8 md:p-12 lg:p-14 shadow-[0_40px_110px_rgba(3,8,16,0.45)]">
+              <span className="pointer-events-none absolute left-0 top-0 h-px w-full bg-gradient-to-r from-accent/45 via-cream/10 to-transparent"></span>
               <form
                 name="contact"
                 method="POST"
                 data-netlify="true"
                 netlify-honeypot="bot-field"
-                className="w-full max-w-2xl space-y-5 text-left"
+                className="w-full max-w-2xl space-y-8 text-left"
                 onSubmit={handleSubmit}
               >
                 <input type="hidden" name="form-name" value="contact" />
@@ -106,72 +119,77 @@ const Conversion: React.FC = () => {
                   </label>
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
                   <div>
-                    <label className="block text-xs uppercase tracking-[0.18em] text-cream/65 mb-2.5">Name</label>
+                    <label className={labelClass} htmlFor="gb-name">Name</label>
                     <input
+                      id="gb-name"
                       type="text"
                       name="name"
                       required
-                      className="w-full bg-background/35 border border-cream/15 px-4 py-3.5 text-cream transition-colors placeholder-cream/55 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/35"
+                      className={fieldClass}
                       placeholder="Enter your full name"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs uppercase tracking-[0.18em] text-cream/65 mb-2.5">Company</label>
+                    <label className={labelClass} htmlFor="gb-company">Company</label>
                     <input
+                      id="gb-company"
                       type="text"
                       name="company"
-                      className="w-full bg-background/35 border border-cream/15 px-4 py-3.5 text-cream transition-colors placeholder-cream/55 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/35"
+                      className={fieldClass}
                       placeholder="Company name"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
                   <div>
-                    <label className="block text-xs uppercase tracking-[0.18em] text-cream/65 mb-2.5">Email</label>
+                    <label className={labelClass} htmlFor="gb-email">Email</label>
                     <input
+                      id="gb-email"
                       type="email"
                       name="email"
                       required
-                      className="w-full bg-background/35 border border-cream/15 px-4 py-3.5 text-cream transition-colors placeholder-cream/55 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/35"
+                      className={fieldClass}
                       placeholder="email@company.com"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs uppercase tracking-[0.18em] text-cream/65 mb-2.5">Phone</label>
+                    <label className={labelClass} htmlFor="gb-phone">Phone</label>
                     <input
+                      id="gb-phone"
                       type="tel"
                       name="phone"
-                      className="w-full bg-background/35 border border-cream/15 px-4 py-3.5 text-cream transition-colors placeholder-cream/55 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/35"
+                      className={fieldClass}
                       placeholder="(555) 123-4567"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase tracking-[0.18em] text-cream/65 mb-2.5">How can we help?</label>
+                  <label className={labelClass} htmlFor="gb-message">How can we help?</label>
                   <textarea
+                    id="gb-message"
                     name="message"
-                    rows={5}
-                    className="w-full resize-none bg-background/35 border border-cream/15 px-4 py-3.5 text-cream transition-colors placeholder-cream/55 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/35"
+                    rows={4}
+                    className={`${fieldClass} resize-none`}
                     placeholder="Tell us about the opportunity, financing need, or transaction you're considering."
                   />
                 </div>
 
-                <label className="flex items-start gap-3 pt-1 text-xs leading-relaxed text-cream/60">
+                <label className="flex items-start gap-3.5 pt-2 font-sans text-xs font-light leading-relaxed text-cream/55">
                   <input
                     type="checkbox"
                     name="marketing_opt_in"
                     value="agreed"
                     defaultChecked
-                    className="mt-0.5 h-4 w-4 border border-cream/30 bg-background/35 accent-accent"
+                    className="mt-0.5 h-3.5 w-3.5 shrink-0 border border-cream/30 bg-background/35 accent-accent"
                   />
                   <span>By submitting this form, you agree to receive email and SMS communications from us</span>
                 </label>
 
-                <div className="min-h-[16px]">
+                <div className="empty:hidden">
                   {submissionState === 'success' && (
                     <p className="border border-emerald-300/25 bg-emerald-300/10 px-4 py-3 text-sm leading-relaxed text-emerald-100" aria-live="polite">
                       Thanks. Your message was sent successfully, and we&apos;ll be in touch shortly.
@@ -185,11 +203,11 @@ const Conversion: React.FC = () => {
                   )}
                 </div>
 
-                <div className="flex flex-col md:flex-row md:items-center md:justify-end gap-5 pt-3">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-end gap-5 pt-4">
                   <button
                     type="submit"
                     disabled={submissionState === 'submitting'}
-                    className="group w-full md:w-auto md:min-w-[260px] bg-accent text-background font-bold uppercase tracking-widest px-8 py-5 flex items-center justify-center gap-2 hover:bg-cream hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(232,222,201,0.18)] transition-all duration-300"
+                    className="group w-full md:w-auto md:min-w-[260px] bg-accent text-background font-sans text-xs font-semibold uppercase tracking-[0.2em] px-10 py-5 flex items-center justify-center gap-3 hover:bg-cream hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(232,222,201,0.18)] disabled:opacity-60 disabled:hover:translate-y-0 transition-all duration-300"
                   >
                     {submissionState === 'submitting' ? 'Sending...' : 'Start Conversation'}
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />

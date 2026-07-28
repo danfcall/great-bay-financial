@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${scrolled ? 'py-4 bg-background/90 backdrop-blur-md border-transparent' : 'py-8 bg-transparent border-white/30'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${scrolled ? 'py-4 bg-background/85 backdrop-blur-md border-cream/10' : 'py-8 bg-transparent border-transparent'
         }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
             <a
               key={item.label}
               href={item.href}
-              className="text-sm font-medium text-cream/70 hover:text-accent transition-colors uppercase tracking-wider"
+              className="font-sans text-[0.6875rem] font-medium text-cream/65 hover:text-accent transition-colors duration-500 uppercase tracking-[0.24em]"
             >
               {item.label}
             </a>
@@ -47,24 +47,10 @@ const Navbar: React.FC = () => {
         <div className="hidden md:flex">
           <a
             href="#contact"
-            className={`relative flex items-center gap-2 px-6 py-2 border rounded-sm text-sm uppercase tracking-wide group overflow-hidden transition-[border-color,color,background-color] duration-500 ${
-              scrolled
-                ? 'border-cream/20 text-cream hover:border-accent/40'
-                : 'border-white/70 text-white hover:border-white'
-            }`}
+            className="group relative flex items-center gap-3 px-7 py-3 border border-cream/25 font-sans text-[0.6875rem] uppercase tracking-[0.24em] text-cream/85 overflow-hidden transition-colors duration-500 hover:border-accent/50 hover:text-accent"
           >
-            <span
-              className={`absolute inset-0 bg-gradient-to-br from-surface/20 via-background/90 to-background transition-opacity duration-500 ${
-                scrolled ? 'opacity-100' : 'opacity-0'
-              }`}
-            ></span>
-            <span
-              className={`absolute inset-0 bg-white/5 transition-opacity duration-500 ${
-                scrolled ? 'opacity-0' : 'opacity-0 group-hover:opacity-100'
-              }`}
-            ></span>
             <span className="relative">Contact Us</span>
-            <ArrowRight className="relative w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="relative w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-500" />
           </a>
         </div>
 
@@ -87,7 +73,7 @@ const Navbar: React.FC = () => {
             <a
               key={item.label}
               href={item.href}
-              className="text-2xl font-display font-bold text-cream hover:text-accent"
+              className="text-2xl font-display font-normal tracking-[-0.01em] text-cream hover:text-accent transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               {item.label}

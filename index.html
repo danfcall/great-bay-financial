@@ -147,12 +147,14 @@
       color: transparent;
     }
 
-    /* Wistia Placeholder Style */
+    /* Wistia placeholder. The hero loop now sits inside a fixed-ratio frame,
+       so the swatch fills that frame rather than reserving 16:9 of its own. */
     wistia-player[media-id='l5jef1dyo0']:not(:defined) {
-      background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/l5jef1dyo0/swatch');
+      background: center / cover no-repeat url('https://fast.wistia.com/embed/medias/l5jef1dyo0/swatch');
       display: block;
       filter: blur(5px);
-      padding-top: 56.25%;
+      width: 100%;
+      height: 100%;
     }
   </style>
 

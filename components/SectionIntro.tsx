@@ -29,30 +29,30 @@ const SectionIntro: React.FC<SectionIntroProps> = ({
   return (
     <div className={`${sticky ? `md:sticky h-fit ${stickyClassName}` : ''}`}>
       <div className={`flex max-w-md flex-col gap-6 ${alignmentClasses}`}>
-        <div className="inline-flex items-center gap-3">
-          <span className="h-px w-12 bg-accent/60"></span>
-          <span className="text-accent/85 uppercase tracking-[0.26em] text-[0.6875rem] font-medium">
+        <div className="inline-flex items-center gap-4">
+          <span className="h-px w-12 bg-accent/50"></span>
+          <span className="font-sans text-accent/80 uppercase tracking-[0.32em] text-[0.6875rem] font-light">
             {eyebrow}
           </span>
         </div>
 
-        <div className="space-y-4">
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-cream leading-[0.95] tracking-[-0.02em] text-balance">
+        <div className="space-y-5">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-[3.5rem] font-normal text-cream leading-[1.05] tracking-[-0.02em] text-balance">
             {accentInline ? (
               <span>
                 {title}
-                <span className="text-outline-accent italic">{accent}</span>
+                <span className="italic font-light text-accent/95">{accent}</span>
               </span>
             ) : (
               <>
                 <span className="block">{title}</span>
-                <span className="block text-outline-accent italic">{accent}</span>
+                <span className="block italic font-light text-accent/95">{accent}</span>
               </>
             )}
           </h2>
 
           {description ? (
-            <p className="max-w-md text-base md:text-lg leading-relaxed text-cream/60">
+            <p className="max-w-md font-sans text-base md:text-lg font-light leading-[1.75] text-cream/65">
               {description}
             </p>
           ) : null}
