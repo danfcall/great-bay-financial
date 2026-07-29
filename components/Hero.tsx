@@ -17,20 +17,39 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden border-b border-cream/10">
-      {/* Ambient ground. The video is framed further down, so the section
-          itself stays quiet: one warm bloom behind the frame, one cool wash
-          under the type. */}
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div className="absolute -top-32 left-[-10%] w-[45rem] h-[45rem] rounded-full bg-surface/25 blur-[140px]"></div>
-        <div className="absolute top-1/4 right-[-8%] w-[38rem] h-[38rem] rounded-full bg-accent/[0.07] blur-[130px]"></div>
-        <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-background to-transparent"></div>
+      {/* Full-screen background loop, graded toward the page navy so type
+          stays legible over any frame of the footage. */}
+      <div className="absolute inset-0 w-full h-full z-0 bg-background">
+        <div className="absolute inset-0 bg-background/30 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-10"></div>
+
+        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-[177.78vh] h-[56.25vw]">
+            <WistiaPlayer
+              media-id="l5jef1dyo0"
+              aspect="1.7777777777777777"
+              autoplay="muted"
+              muted="true"
+              loop="true"
+              playsinline="true"
+              controlsVisibleOnLoad="false"
+              playButton="false"
+              playbar="false"
+              volumeControl="false"
+              fullscreenButton="false"
+              smallPlayButton="false"
+              loadingSpinner="false"
+              videoFoam="false"
+              quality="1080p"
+              className="w-full h-full object-cover opacity-100"
+            ></WistiaPlayer>
+          </div>
+        </div>
       </div>
 
       <div className="flex-1 flex items-center px-6 md:px-12 pt-32 pb-12 md:pt-36 md:pb-10 relative z-10">
-        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 items-center gap-y-12 lg:gap-x-16">
-
-          {/* Type column */}
-          <div className="lg:col-span-7 xl:col-span-6">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="max-w-2xl xl:max-w-3xl">
             <h1 className="font-display font-normal text-cream text-[clamp(2.75rem,5.6vw,4.75rem)] leading-[1.06] tracking-[-0.02em]">
               {LINES.map((line) => (
                 <span
@@ -59,47 +78,6 @@ const Hero: React.FC = () => {
                 <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" />
               </a>
             </div>
-          </div>
-
-          {/* Framed loop. Matted like a print: a hairline border, a margin of
-              ground between border and image, and a vignette so the footage
-              settles into the navy instead of sitting on top of it. */}
-          <div className="lg:col-span-5 xl:col-start-8 xl:col-span-5 opacity-0 animate-[fadeIn_1.6s_ease-out_0.5s_forwards]">
-            <figure className="relative border border-cream/15 bg-background/40 p-2.5 md:p-3 shadow-[0_40px_120px_rgba(3,8,20,0.55)]">
-              <span className="pointer-events-none absolute left-0 top-0 h-px w-full bg-gradient-to-r from-accent/50 via-cream/10 to-transparent"></span>
-
-              {/* Portrait crop on desktop, but bounded by the viewport so the
-                  hero still resolves in one screen. */}
-              <div className="relative aspect-[3/2] sm:aspect-[16/10] lg:aspect-auto lg:h-[clamp(18rem,46vh,28rem)] overflow-hidden bg-background">
-                <div className="absolute left-1/2 top-1/2 h-full aspect-video -translate-x-1/2 -translate-y-1/2 pointer-events-none [filter:saturate(0.86)_contrast(1.02)_brightness(1)]">
-                  <WistiaPlayer
-                    media-id="l5jef1dyo0"
-                    aspect="1.7777777777777777"
-                    autoplay="muted"
-                    muted="true"
-                    loop="true"
-                    playsinline="true"
-                    controlsVisibleOnLoad="false"
-                    playButton="false"
-                    playbar="false"
-                    volumeControl="false"
-                    fullscreenButton="false"
-                    smallPlayButton="false"
-                    loadingSpinner="false"
-                    videoFoam="false"
-                    quality="1080p"
-                    className="w-full h-full object-cover"
-                  ></WistiaPlayer>
-                </div>
-
-                {/* Grade the footage toward the page's navy so the frame reads
-                    as part of the composition rather than a window cut into it. */}
-                <div className="absolute inset-0 pointer-events-none bg-background/12"></div>
-                <div className="absolute inset-0 pointer-events-none bg-surface/20 mix-blend-color"></div>
-                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-background/45 via-transparent to-background/12"></div>
-                <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_80px_rgba(10,22,40,0.45)]"></div>
-              </div>
-            </figure>
           </div>
         </div>
       </div>

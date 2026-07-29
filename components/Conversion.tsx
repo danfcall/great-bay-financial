@@ -96,7 +96,6 @@ const Conversion: React.FC = () => {
               eyebrow="Contact"
               title="Ready to"
               accent="Grow?"
-              description="Fill out the form to learn more about our products and service offerings."
             />
           </div>
 
