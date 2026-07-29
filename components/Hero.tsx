@@ -1,6 +1,5 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import { SERVICES } from '../constants';
 
 /* The slogan is set as three stacked lines rather than one block of caps.
    Sentence case and a light display weight do the work that size and weight
@@ -80,33 +79,6 @@ const Hero: React.FC = () => {
               </a>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Index rail. The three focus areas as a table of contents rather than
-          a row of cards — labelled, so the list reads as an answer to a
-          question the visitor is already asking. */}
-      <div className="relative z-10 px-6 md:px-12 pb-10 opacity-0 animate-[fadeIn_1.2s_ease-out_1.2s_forwards]">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="mb-5 font-sans text-[0.6875rem] font-light uppercase tracking-[0.18em] sm:tracking-[0.32em] text-accent/80">
-            What We Do
-          </h2>
-
-          <ul className="grid grid-cols-1 sm:grid-cols-3 border-t border-cream/15">
-            {SERVICES.map((service) => (
-              <li
-                key={service.id}
-                className="flex items-baseline gap-4 border-b border-cream/10 py-5 sm:border-b-0 sm:border-r sm:border-cream/10 sm:py-7 sm:pr-8 sm:pl-8 sm:first:pl-0 sm:last:border-r-0 sm:last:pr-0"
-              >
-                <span className="font-display text-[0.6875rem] font-medium tracking-[0.18em] text-accent/70">
-                  {service.id}
-                </span>
-                <span className="font-sans text-sm md:text-base font-light tracking-[0.01em] text-cream/75 text-balance">
-                  {service.title}
-                </span>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </section>
