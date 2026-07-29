@@ -22,6 +22,7 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 w-full h-full z-0 bg-background">
         <div className="absolute inset-0 bg-background/30 z-10"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/45 via-background/10 to-transparent z-10"></div>
 
         <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-[177.78vh] h-[56.25vw]">

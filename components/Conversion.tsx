@@ -11,6 +11,11 @@ const labelClass =
 const fieldClass =
   'w-full bg-transparent border-0 border-b border-cream/20 px-0 py-3 font-sans text-base font-light text-cream transition-colors duration-300 placeholder-cream/35 hover:border-cream/35 focus:outline-none focus:border-accent focus:ring-0';
 
+/* The message field is tall enough that a single bottom rule leaves the
+   placeholder stranded well above the line, so it gets a full box instead. */
+const textareaFieldClass =
+  'w-full bg-transparent border border-cream/20 px-4 py-3 font-sans text-base font-light text-cream transition-colors duration-300 placeholder-cream/35 hover:border-cream/35 focus:outline-none focus:border-accent focus:ring-0';
+
 const Conversion: React.FC = () => {
   const WistiaPlayer = 'wistia-player' as any;
   const [submissionState, setSubmissionState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -172,7 +177,7 @@ const Conversion: React.FC = () => {
                     id="gb-message"
                     name="message"
                     rows={4}
-                    className={`${fieldClass} resize-none`}
+                    className={`${textareaFieldClass} resize-none`}
                     placeholder="Tell us about the opportunity, financing need, or transaction you're considering."
                   />
                 </div>
@@ -208,7 +213,7 @@ const Conversion: React.FC = () => {
                     disabled={submissionState === 'submitting'}
                     className="group w-full md:w-auto md:min-w-[260px] bg-accent text-background font-sans text-xs font-semibold uppercase tracking-[0.2em] px-10 py-5 flex items-center justify-center gap-3 hover:bg-cream hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(232,222,201,0.18)] disabled:opacity-60 disabled:hover:translate-y-0 transition-all duration-300"
                   >
-                    {submissionState === 'submitting' ? 'Sending...' : 'Start Conversation'}
+                    {submissionState === 'submitting' ? 'Sending...' : 'Submit'}
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
                 </div>
