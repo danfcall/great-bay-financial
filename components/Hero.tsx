@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import ContactForm from './ContactForm';
 
 /* The slogan is set as three stacked lines rather than one block of caps.
    Sentence case and a light display weight do the work that size and weight
@@ -15,16 +15,19 @@ const Hero: React.FC = () => {
   const WistiaPlayer = 'wistia-player' as any;
 
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden border-b border-cream/10">
+    <section className="relative flex min-h-[100svh] flex-col overflow-hidden">
       {/* Full-screen background loop, graded toward the page navy so type
           stays legible over any frame of the footage. */}
-      <div className="absolute inset-0 w-full h-full z-0 bg-background">
-        <div className="absolute inset-0 bg-background/30 z-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-background/45 via-background/10 to-transparent z-10"></div>
+      <div className="absolute inset-0 z-0 h-full w-full bg-background">
+        <div className="absolute inset-0 z-10 bg-background/35"></div>
+        <div className="absolute inset-0 z-10 bg-gradient-to-t from-background via-background/55 to-transparent"></div>
+        {/* Both edges now carry content — the words on the left, the panel on
+            the right — so the footage is darkened at the sides and left to
+            breathe through the middle. */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-r from-background/70 via-background/15 to-background/55"></div>
 
-        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-[177.78vh] h-[56.25vw]">
+        <div className="pointer-events-none absolute inset-0 h-full w-full overflow-hidden">
+          <div className="absolute left-1/2 top-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full -translate-x-1/2 -translate-y-1/2">
             <WistiaPlayer
               media-id="l5jef1dyo0"
               aspect="1.7777777777777777"
@@ -41,44 +44,51 @@ const Hero: React.FC = () => {
               loadingSpinner="false"
               videoFoam="false"
               quality="1080p"
-              className="w-full h-full object-cover opacity-100"
+              className="h-full w-full object-cover opacity-100"
             ></WistiaPlayer>
           </div>
         </div>
       </div>
 
-      <div className="flex-1 flex items-center px-6 md:px-12 pt-32 pb-12 md:pt-36 md:pb-10 relative z-10">
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="max-w-2xl xl:max-w-3xl">
-            <h1 className="font-display font-normal text-cream text-[clamp(2.75rem,5.6vw,4.75rem)] leading-[1.06] tracking-[-0.02em]">
-              {LINES.map((line) => (
-                <span
-                  key={line.text}
-                  className={`block opacity-0 animate-[fadeInUp_1.1s_cubic-bezier(0.16,1,0.3,1)_${line.delay}_forwards] ${
-                    line.accent ? 'italic text-accent/95 font-light' : ''
-                  }`}
-                >
-                  {line.text}
-                </span>
-              ))}
-            </h1>
+      {/* The vertical rhythm is tied to viewport height so the panel keeps
+          fitting on a short laptop screen instead of pushing the page into a
+          scroll. */}
+      <div className="relative z-10 flex flex-1 flex-col px-6 pb-8 pt-28 md:px-12 lg:pb-5 lg:pt-[clamp(6.75rem,13vh,8rem)]">
+        <div className="mx-auto flex w-full max-w-7xl flex-1 items-center">
+          {/* One row on desktop: the statement holds the left, the form holds
+              the right. Below lg they stack, words first. */}
+          <div className="grid w-full items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,30rem)] lg:gap-16 xl:gap-24">
+            <div className="max-w-xl">
+              <h1 className="font-display text-[clamp(2.75rem,5vw,4.5rem)] font-normal leading-[1.06] tracking-[-0.02em] text-cream">
+                {LINES.map((line) => (
+                  <span
+                    key={line.text}
+                    className={`block opacity-0 animate-[fadeInUp_1.1s_cubic-bezier(0.16,1,0.3,1)_${line.delay}_forwards] ${
+                      line.accent ? 'italic text-accent/95 font-light' : ''
+                    }`}
+                  >
+                    {line.text}
+                  </span>
+                ))}
+              </h1>
 
-            <p className="opacity-0 animate-[fadeInUp_1.1s_cubic-bezier(0.16,1,0.3,1)_0.65s_forwards] mt-8 md:mt-9 max-w-xl font-sans text-base md:text-[1.0625rem] font-light leading-[1.7] text-cream/70 text-pretty">
-              Great Bay is a holding company focused on select investments across New England. Through disciplined capital allocation and a long-term investment philosophy, we preserve and grow generational wealth.
-            </p>
+              <p className="mt-7 max-w-lg text-pretty font-sans text-base font-light leading-[1.7] text-cream/70 opacity-0 animate-[fadeInUp_1.1s_cubic-bezier(0.16,1,0.3,1)_0.65s_forwards] md:mt-8 md:text-[1.0625rem]">
+                Great Bay is a holding company focused on select investments across New England. Through disciplined capital allocation and a long-term investment philosophy, we preserve and grow generational wealth.
+              </p>
+            </div>
 
-            {/* One quiet action. The page's only filled button belongs to the
-                contact form, so this reads as a hairline. */}
-            <div className="opacity-0 animate-[fadeIn_1.2s_ease-out_0.95s_forwards] mt-9 md:mt-11">
-              <a
-                href="#contact"
-                className="group inline-flex items-center justify-center gap-3 border border-accent/40 px-9 py-4 font-sans text-xs font-medium uppercase tracking-[0.2em] text-accent transition-colors duration-500 hover:bg-accent hover:text-background"
-              >
-                <span>Start Conversation</span>
-                <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" />
-              </a>
+            <div className="opacity-0 animate-[fadeIn_1.2s_ease-out_0.85s_forwards]">
+              <ContactForm />
             </div>
           </div>
+        </div>
+
+        {/* The old footer folded into the bottom of the viewport, so the page
+            ends where the screen does. */}
+        <div className="mx-auto mt-10 w-full max-w-7xl lg:mt-4">
+          <p className="font-sans text-[0.6875rem] font-light text-cream/40">
+            &copy; {new Date().getFullYear()} Great Bay Financial. All rights reserved.
+          </p>
         </div>
       </div>
     </section>
