@@ -17,8 +17,16 @@ const Hero: React.FC = () => {
   return (
     <section className="relative flex min-h-[100svh] flex-col overflow-hidden">
       {/* Full-screen background loop, graded toward the page navy so type
-          stays legible over any frame of the footage. */}
-      <div className="absolute inset-0 z-0 h-full w-full bg-background">
+          stays legible over any frame of the footage.
+
+          The layer is pinned to the viewport rather than to the section. Its
+          cover math is written in vh/vw, so it only holds when the box it
+          fills is exactly one screen; on the phone, where the section grows
+          past that, min-h-full used to stretch the player into a 1.1:1 box and
+          the 16:9 footage letterboxed inside it — a band of bare navy across
+          the top. Fixed also lets the loop sit still while the content
+          scrolls over it. */}
+      <div className="fixed inset-0 z-0 bg-background">
         <div className="absolute inset-0 z-10 bg-background/35"></div>
         <div className="absolute inset-0 z-10 bg-gradient-to-t from-background via-background/55 to-transparent"></div>
         {/* Both edges now carry content — the words on the left, the panel on
