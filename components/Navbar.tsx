@@ -14,12 +14,16 @@ const Navbar: React.FC = () => {
         {/* The lockup carries ~14% of its own width as blank space before the
             straight stem of the F begins. Pulling the link back by that inset
             puts the stem — not the SVG's box — on the headline's edge, and
-            leaves the gull's tail to overhang as the flourish it is. */}
-        <a href="#" className="group -ml-[13.5px] flex items-center md:-ml-[15.5px]">
+            leaves the gull's tail to overhang as the flourish it is.
+
+            The pull is a share of the rendered width, so it is paired to the
+            height below: 14.29% x 1.691 x height. Change one and the mark
+            slides off the headline's edge. */}
+        <a href="#" className="group -ml-[13.5px] flex items-center md:-ml-[18.6px]">
           <img
             src={`${import.meta.env.BASE_URL}great-bay-full-logo-foam.svg`}
             alt="Great Bay Financial"
-            className="h-14 w-auto object-contain transition-opacity duration-300 group-hover:opacity-80 md:h-16"
+            className="h-14 w-auto object-contain transition-opacity duration-300 group-hover:opacity-80 md:h-[4.8rem]"
           />
         </a>
       </div>
