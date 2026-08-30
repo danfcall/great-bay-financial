@@ -25,3 +25,7 @@ dist-ssr
 
 # Local Netlify folder
 .netlify
+
+# Video masters. Large source files kept out of the repo and the deploy;
+# scripts/encode-media.sh regenerates the public/ derivatives from them.
+media-src

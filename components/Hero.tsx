@@ -1,5 +1,6 @@
 import React from 'react';
 import ContactForm from './ContactForm';
+import { BackgroundLoopToggle, BackgroundLoopVideo, useBackgroundLoop } from './BackgroundLoop';
 
 /* The slogan is set as three stacked lines rather than one block of caps.
    Sentence case and a light display weight do the work that size and weight
@@ -12,50 +13,27 @@ const LINES = [
 ];
 
 const Hero: React.FC = () => {
-  const WistiaPlayer = 'wistia-player' as any;
+  const { videoRef, isPlaying, toggle } = useBackgroundLoop();
 
   return (
     <section className="relative flex min-h-[100svh] flex-col overflow-hidden">
       {/* Full-screen background loop, graded toward the page navy so type
-          stays legible over any frame of the footage.
+          stays legible over any frame of the footage. The layer is pinned to
+          the viewport rather than to the section, so the loop sits still while
+          the content scrolls over it.
 
-          The layer is pinned to the viewport rather than to the section. Its
-          cover math is written in vh/vw, so it only holds when the box it
-          fills is exactly one screen; on the phone, where the section grows
-          past that, min-h-full used to stretch the player into a 1.1:1 box and
-          the 16:9 footage letterboxed inside it — a band of bare navy across
-          the top. Fixed also lets the loop sit still while the content
-          scrolls over it. */}
+          The framing is object-cover on the video itself. The old embed could
+          not do that, so it carried its own cover math in vh/vw — which only
+          held when the box was exactly one screen, and letterboxed the footage
+          on phones where the section grows past that. */}
       <div className="fixed inset-0 z-0 bg-background">
+        <BackgroundLoopVideo videoRef={videoRef} />
         <div className="absolute inset-0 z-10 bg-background/35"></div>
         <div className="absolute inset-0 z-10 bg-gradient-to-t from-background via-background/55 to-transparent"></div>
         {/* Both edges now carry content — the words on the left, the panel on
             the right — so the footage is darkened at the sides and left to
             breathe through the middle. */}
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-background/70 via-background/15 to-background/55"></div>
-
-        <div className="pointer-events-none absolute inset-0 h-full w-full overflow-hidden">
-          <div className="absolute left-1/2 top-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full -translate-x-1/2 -translate-y-1/2">
-            <WistiaPlayer
-              media-id="l5jef1dyo0"
-              aspect="1.7777777777777777"
-              autoplay="muted"
-              muted="true"
-              loop="true"
-              playsinline="true"
-              controlsVisibleOnLoad="false"
-              playButton="false"
-              playbar="false"
-              volumeControl="false"
-              fullscreenButton="false"
-              smallPlayButton="false"
-              loadingSpinner="false"
-              videoFoam="false"
-              quality="1080p"
-              className="h-full w-full object-cover opacity-100"
-            ></WistiaPlayer>
-          </div>
-        </div>
       </div>
 
       {/* The vertical rhythm is tied to viewport height so the panel keeps
@@ -93,10 +71,11 @@ const Hero: React.FC = () => {
 
         {/* The old footer folded into the bottom of the viewport, so the page
             ends where the screen does. */}
-        <div className="mx-auto mt-10 w-full max-w-7xl lg:mt-4">
+        <div className="mx-auto mt-10 flex w-full max-w-7xl items-center justify-between gap-6 lg:mt-4">
           <p className="font-sans text-[0.6875rem] font-light text-cream/40">
             &copy; {new Date().getFullYear()} Great Bay Financial. All rights reserved.
           </p>
+          <BackgroundLoopToggle isPlaying={isPlaying} onToggle={toggle} />
         </div>
       </div>
     </section>
